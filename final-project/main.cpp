@@ -1,14 +1,11 @@
-//
-//  main.cpp
-//  final-project
-//
-//  Created by Riley Johnston on 11/29/21.
-//
+// Riley Johnston
+// CS137
+// Final project
 
 #include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main() {
+    
     return 0;
 }

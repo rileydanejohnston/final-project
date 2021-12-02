@@ -31,6 +31,8 @@ public:
     double getCostPerGal() const;
     double getPricePerGal() const;
     double getTotalGal() const;
+    
+    void produce(int = 1);
 };
 
 #endif

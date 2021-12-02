@@ -53,3 +53,7 @@ double Cow::getPricePerGal() const {
 double Cow::getTotalGal() const {
     return totalGallons;
 }
+
+void Cow::produce(int days) {
+    totalGallons += (days * getAvgMilkOutput());
+}

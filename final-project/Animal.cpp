@@ -43,3 +43,4 @@ string Animal::getAnimal() const
 string Animal::getName() const {
     return name;
 }
+

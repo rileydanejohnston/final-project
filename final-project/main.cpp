@@ -9,7 +9,6 @@ using namespace std;
 
 int main() {
     
-    Animal pet1(5.5, "Cow");
     Cow pet2(7.5, 1.8, 5.5, 5000.5, "Donald", 10, "Cow");
     
     pet2.produce(10);

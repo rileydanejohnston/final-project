@@ -27,5 +27,7 @@ public:
     double getAge() const;
     string getAnimal() const;
     string getName() const;
+    
+    virtual void produce(int) = 0;
 };
 #endif

@@ -17,7 +17,7 @@ private:
     double costPerGal;
     double pricePerGal;
 public:
-    Cow(double = 0.0, double = 0.0, double = 0.0, double = 0.0, string = "Alex", double = 0.0, string = "Cow");
+    Cow(double = 0.0, double = 0.0, double = 0.0, string = "Alex", double = 0.0, string = "Cow");
     
     
     Cow& setAvgMilkOutput(double);

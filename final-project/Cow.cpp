@@ -5,10 +5,9 @@
 
 #include "Cow.h"
 
-Cow::Cow(double output, double milkOutput, double cost, double price, string nm, double years, string anml)
+Cow::Cow(double milkOutput, double cost, double price, string nm, double years, string anml)
 :Animal(years, anml, nm)
 {
-    setAvgMilkOutput(output).
     setAvgMilkOutput(milkOutput).
     setCostPerGal(cost).
     setPricePerGal(price);

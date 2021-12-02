@@ -15,15 +15,17 @@ class Animal {
 private:
     double age;
     string animal;
-    // age?
+    string name;
     
 public:
-    Animal(double = 0.0, string = "Cow");
+    Animal(double = 0.0, string = "Cow", string = "Alex");
     
     Animal& setAge(double years);
     Animal& setAnimal(string anml);
+    Animal& setName(string);
     
     double getAge() const;
     string getAnimal() const;
+    string getName() const;
 };
 #endif

@@ -4,10 +4,12 @@
 
 #include "Animal.h"
 
-Animal::Animal(double years, string anml)
+Animal::Animal(double years, string anml, string nm)
 {
-    setAge(years);
-    setAnimal(anml);
+    setAge(years).
+    setAnimal(anml).
+    setName(nm);
+    
 }
 
 Animal& Animal::setAge(double years)
@@ -23,6 +25,11 @@ Animal& Animal::setAnimal(string anml)
     return *this;
 }
 
+Animal& Animal::setName(string nm){
+    name = nm;
+    return *this;
+}
+
 double Animal::getAge() const
 {
     return age;
@@ -31,4 +38,8 @@ double Animal::getAge() const
 string Animal::getAnimal() const
 {
     return animal;
+}
+
+string Animal::getName() const {
+    return name;
 }

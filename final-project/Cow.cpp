@@ -5,12 +5,13 @@
 
 #include "Cow.h"
 
-Cow::Cow(double milkOutput, double cost, double price, string nm, double years, string anml)
+Cow::Cow(double milkOutput, double cost, double price, double totalGals, string nm, double years, string anml)
 :Animal(years, anml, nm)
 {
     setAvgMilkOutput(milkOutput).
     setCostPerGal(cost).
-    setPricePerGal(price);
+    setPricePerGal(price).
+    setTotalGal(totalGals);
 }
 
 Cow& Cow::setAvgMilkOutput(double output){
@@ -31,6 +32,12 @@ Cow& Cow::setPricePerGal(double price){
     return *this;
 }
 
+Cow& Cow::setTotalGal(double totalGals){
+    // figure out validation
+    totalGallons = (totalGals >= 0.0 && totalGals <= 15000.0) ? totalGals : 0.0;
+    return *this;
+}
+
 double Cow::getAvgMilkOutput() const {
     return avgMilkOutput;
 }
@@ -41,4 +48,8 @@ double Cow::getCostPerGal() const {
 
 double Cow::getPricePerGal() const {
     return pricePerGal;
+}
+
+double Cow::getTotalGal() const {
+    return totalGallons;
 }

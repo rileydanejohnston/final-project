@@ -16,17 +16,21 @@ private:
     double avgMilkOutput;
     double costPerGal;
     double pricePerGal;
+    
+    double totalGallons;
 public:
-    Cow(double = 0.0, double = 0.0, double = 0.0, string = "Alex", double = 0.0, string = "Cow");
+    Cow(double = 0.0, double = 0.0, double = 0.0, double = 0.0, string = "Alex", double = 0.0, string = "Cow");
     
     
     Cow& setAvgMilkOutput(double);
     Cow& setCostPerGal(double);     // validate
     Cow& setPricePerGal(double);    // validate
+    Cow& setTotalGal(double);
     
     double getAvgMilkOutput() const;
     double getCostPerGal() const;
     double getPricePerGal() const;
+    double getTotalGal() const;
 };
 
 #endif

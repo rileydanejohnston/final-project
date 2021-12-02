@@ -10,7 +10,7 @@ using namespace std;
 int main() {
     
     Animal pet1(5.5, "Cow");
-    Cow pet2(7.5, 1.8, 5.5, "Donald", 10, "Cow");
+    Cow pet2(7.5, 1.8, 5.5, 5000.5, "Donald", 10, "Cow");
     
     cout << "pet2 output: " << pet2.getAvgMilkOutput() << endl;
     cout << "pet2 cost: " << pet2.getCostPerGal() << endl;

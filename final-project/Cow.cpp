@@ -57,3 +57,8 @@ double Cow::getTotalGal() const {
 void Cow::produce(int days) {
     totalGallons += (days * getAvgMilkOutput());
 }
+
+void Cow::display() const {
+    Animal::display();
+    cout << getAvgMilkOutput() << "\t" << getCostPerGal() << "\t" << getTotalGal() << endl;
+}

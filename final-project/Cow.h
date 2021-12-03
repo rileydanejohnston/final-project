@@ -33,6 +33,7 @@ public:
     double getTotalGal() const;
     
     virtual void produce(int = 1);
+    virtual void display() const;
 };
 
 #endif

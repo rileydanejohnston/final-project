@@ -29,5 +29,6 @@ public:
     string getName() const;
     
     virtual void produce(int) = 0;
+    virtual void display() const;
 };
 #endif

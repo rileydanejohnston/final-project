@@ -44,3 +44,6 @@ string Animal::getName() const {
     return name;
 }
 
+void Animal::display() const {
+    cout << getAnimal() << "\t" << getName() << "\t" << getAge() << "\t";
+}

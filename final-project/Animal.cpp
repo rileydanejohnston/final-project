@@ -3,6 +3,7 @@
 // Final project
 
 #include "Animal.h"
+#include <iomanip>
 
 Animal::Animal(double years, string anml, string nm)
 {
@@ -45,5 +46,8 @@ string Animal::getName() const {
 }
 
 void Animal::display() const {
-    cout << getAnimal() << "\t" << getName() << "\t" << getAge() << "\t";
+    cout <<
+    getAnimal() << "\t" <<
+    setw(10) << getName()   << "\t" <<
+    setw(6) << getAge() << "\t";
 }

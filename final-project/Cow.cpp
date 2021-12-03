@@ -4,6 +4,7 @@
 
 
 #include "Cow.h"
+#include <iomanip>
 
 Cow::Cow(double milkOutput, double cost, double price, double totalGals, string nm, double years, string anml)
 :Animal(years, anml, nm)
@@ -54,11 +55,25 @@ double Cow::getTotalGal() const {
     return totalGallons;
 }
 
+double Cow::calcProfitPerGal() const {
+    return getPricePerGal() - getCostPerGal();
+}
+
+double Cow::calcTotalProfit() const {
+    return calcProfitPerGal() * getTotalGal();
+}
+
 void Cow::produce(int days) {
     totalGallons += (days * getAvgMilkOutput());
 }
 
 void Cow::display() const {
     Animal::display();
-    cout << getAvgMilkOutput() << "\t" << getCostPerGal() << "\t" << getTotalGal() << endl;
+    cout <<
+    setw(6) << getAvgMilkOutput() << "\t" <<
+    setw(6) << getCostPerGal()    << "\t" <<
+    setw(6) << getPricePerGal()   << "\t" <<
+    setw(6) << calcProfitPerGal() << "\t" <<
+    setw(6) << calcTotalProfit()  << "\t" <<
+    setw(6) << getTotalGal()      << endl;
 }

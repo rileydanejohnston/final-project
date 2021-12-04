@@ -8,34 +8,24 @@
 
 #include <iostream>
 #include <string>
-#include "Animal.h"
+#include "FarmAnimal.h"
 using namespace std;
 
-class Cow : public Animal {
+class Cow : public FarmAnimal {
 private:
     double avgMilkOutput;
-    double costPerGal;
-    double pricePerGal;
-    
-    double totalGallons;
 public:
-    Cow(double = 0.0, double = 0.0, double = 0.0, double = 0.0, string = "Alex", double = 0.0, string = "Cow");
-    
+    Cow(const string& = "Cow",
+        const string& = "Alex",
+        double = 0.0,
+        double = 0.0,
+        double = 0.0,
+        double = 0.0,
+        double = 0.0        );
     
     Cow& setAvgMilkOutput(double);
-    Cow& setCostPerGal(double);     // validate
-    Cow& setPricePerGal(double);    // validate
-    Cow& setTotalGal(double);
-    
     double getAvgMilkOutput() const;
-    double getCostPerGal() const;
-    double getPricePerGal() const;
-    double getTotalGal() const;
-    double calcProfitPerGal() const;
-    double calcTotalProfit() const;
     
-    
-    virtual void produce(int = 1);
     virtual void display() const;
 };
 

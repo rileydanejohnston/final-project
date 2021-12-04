@@ -9,13 +9,15 @@
 Cow::Cow(const string &anml,
          const string &nm,
          double years,
+         double lbs,
          double cost,
          double revenue,
          double total,
          double output)
-:FarmAnimal(anml, nm, years, cost, revenue, total)
+:FarmAnimal(anml, years, lbs, cost, revenue, total)
 {
-    setAvgMilkOutput(output);
+    setAvgMilkOutput(output).
+    setName(nm);
 }
 
 Cow& Cow::setAvgMilkOutput(double output){
@@ -24,12 +26,21 @@ Cow& Cow::setAvgMilkOutput(double output){
     return *this;
 }
 
+Cow& Cow::setName(const string &nm){
+    name = nm;
+    return *this;
+}
+
 double Cow::getAvgMilkOutput() const {
     return avgMilkOutput;
 }
 
+string Cow::getName() const {
+    return name;
+}
 
 void Cow::display() const {
+    cout << getName() << "\t";
     FarmAnimal::display();
     cout <<
     setw(6) << getAvgMilkOutput() << endl;

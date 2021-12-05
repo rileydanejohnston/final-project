@@ -10,12 +10,14 @@ FarmAnimal::FarmAnimal(const string &anml,
                        double lbs,
                        double cost,
                        double revenue,
-                       double total     )
+                       double total,
+                       double avg       )
 :Animal(anml, years, lbs)
 {
     setCostGoods(cost).
     setRevenueGoods(revenue).
-    setTotalGoods(total);
+    setTotalGoods(total).
+    setAvgPerDay(avg);
 }
 
 FarmAnimal& FarmAnimal::setCostGoods(double cost){
@@ -36,6 +38,12 @@ FarmAnimal& FarmAnimal::setTotalGoods(double total){
     return *this;
 }
 
+FarmAnimal& FarmAnimal::setAvgPerDay(double avg){
+    // 6-7 gallons per day is avg
+    avgPerDay = (avg >= 0.0 && avg <= 25.0) ? avg : 0.0;
+    return *this;
+}
+
 double FarmAnimal::getCostGoods() const
 {
     return costGoods;
@@ -51,10 +59,15 @@ double FarmAnimal::getTotalGoods() const
     return totalGoods;
 }
 
+double FarmAnimal::getAvgPerDay() const {
+    return avgPerDay;
+}
+
 void FarmAnimal::display() const {
     Animal::display();
     cout <<
     setw(6)  << getCostGoods() << "\t" <<
     setw(6)  << getRevenueGoods() << "\t" <<
+    setw(6)  << getTotalGoods() << "\t" <<
     setw(6)  << getTotalGoods() << "\t";
 }

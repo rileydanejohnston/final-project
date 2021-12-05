@@ -29,7 +29,7 @@ public:
     double getAge() const;
     double getWeight() const;
     
-    virtual void display() const;
+    void display() const;
 };
 
 #endif

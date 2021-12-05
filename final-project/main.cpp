@@ -3,14 +3,14 @@
 // Final project
 
 #include "Animal.h"
-#include "FarmAnimal.h"
+#include "AnimalFigures.h"
 #include "Cow.h"
 #include <iostream>
 using namespace std;
 
 int main() {
     
-    Cow mooMoo("Cow", "Moo-Moo", 5.5, 1500, 2.5, 5.25, 1023.2, 6.7);
+    Cow mooMoo(1.1, 2.2, "Cow", 5.5, 1500, 2.5, 5.25);
     
     mooMoo.display();
     

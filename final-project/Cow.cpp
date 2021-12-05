@@ -6,30 +6,40 @@
 #include "Cow.h"
 #include <iomanip>
 
-Cow::Cow(const string &anml,
-         const string &nm,
+Cow::Cow(double gal,
+         double totalGal,
+         const string &anml,
          double years,
          double lbs,
          double cost,
-         double revenue,
-         double total,
-         double avg)
-:FarmAnimal(anml, years, lbs, cost, revenue, total, avg)
+         double revenue)
+:AnimalFigures(anml, years, lbs, cost, revenue)
 {
-    setName(nm);
+    setGallonsPerDay(gal).
+    setTotalGallons(totalGal);
 }
 
-Cow& Cow::setName(const string &nm){
-    name = nm;
+Cow& Cow::setGallonsPerDay(double gal){
+    gallonsPerDay = (gal >= 0.0 && gal <= 25.0) ? gal : 0.0;
     return *this;
 }
 
-string Cow::getName() const {
-    return name;
+Cow& Cow::setTotalGallons(double totalGal){
+    totalGallons = (totalGal >= 0.0 && totalGal <= 15000.0) ? totalGal : 0.0;
+    return *this;
+}
+
+double Cow::getGallonsPerDay() const {
+    return gallonsPerDay;
+}
+
+double Cow::getTotalGallons() const
+{
+    return totalGallons;
 }
 
 void Cow::display() const {
-    cout << getName() << "\t";
-    FarmAnimal::display();
-    cout << endl;
+    AnimalFigures::display();
+    cout    << getGallonsPerDay() << "\t" <<
+    setw(6) << getTotalGallons() << "\t" << endl;
 }

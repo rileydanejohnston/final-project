@@ -7,28 +7,29 @@
 #define COW_H
 
 #include <iostream>
-#include <string>
-#include "FarmAnimal.h"
+#include "AnimalFigures.h"
 using namespace std;
 
-class Cow : public FarmAnimal {
+class Cow : public AnimalFigures {
     
 private:
-    string name;
+    double gallonsPerDay;
+    double totalGallons;
     
 public:
-    Cow(const string& = "Cow",
-        const string& = "Alex",
+    Cow(double = 0.0,
         double = 0.0,
-        double = 0.0,
+        const string& = "Cow",
         double = 0.0,
         double = 0.0,
         double = 0.0,
         double = 0.0        );
     
-    Cow& setName(const string&);
+    Cow& setGallonsPerDay(double);
+    Cow& setTotalGallons(double);
     
-    string getName() const;
+    double getGallonsPerDay() const;
+    double getTotalGallons() const;
     
     virtual void display() const;
 };

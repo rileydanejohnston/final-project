@@ -31,6 +31,6 @@ public:
     
     // virtual void produce(int) = 0;
     double calcProfitPerUnit() const;
-    virtual void display() const;
+    void display() const;
 };
 #endif

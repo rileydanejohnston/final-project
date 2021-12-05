@@ -31,7 +31,7 @@ public:
     double getGallonsPerDay() const;
     double getTotalGallons() const;
     
-    virtual void display() const;
+    void display() const;
 };
 
 #endif

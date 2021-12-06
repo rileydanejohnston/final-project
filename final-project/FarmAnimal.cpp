@@ -80,9 +80,6 @@ double FarmAnimal::calcProfitPerUnit() const
 
 void FarmAnimal::display() const {
     cout     << getFarmAnimal() << "\t" <<
-    setw(6)  << getAge() << "\t" <<
-    setw(6)  << getWeight() << "\t" <<
-    setw(6)  << getCostPerUnit() << "\t" <<
-    setw(6)  << getRevenuePerUnit() << "\t" <<
-    setw(6)  << calcProfitPerUnit() << "\t";
+    setw(11)  << getAge() << "\t" <<
+    setw(10)  << getWeight() << "\t";
 }

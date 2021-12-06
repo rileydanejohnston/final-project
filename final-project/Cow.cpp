@@ -44,6 +44,9 @@ void Cow::produce(int days){
 
 void Cow::display() const {
     FarmAnimal::display();
-    cout    << getGallonsPerDay() << "\t" <<
-    setw(6) << getTotalGallons() << "\t" << endl;
+    cout      <<
+    setw(10)  << getTotalGallons() << "\t" <<
+    setw(11)  << FarmAnimal::getRevenuePerUnit() * getTotalGallons() << "\t" <<
+    setw(10)  << FarmAnimal::getCostPerUnit() * getTotalGallons() << "\t" <<
+    setw(10)  << FarmAnimal::calcProfitPerUnit() * getTotalGallons() << "\t" << endl;
 }

@@ -61,8 +61,10 @@ void Chicken::produce(int days){
 
 void Chicken::display() const {
     FarmAnimal::display();
-    cout    << getEggsPerDay() << "\t" <<
-    setw(6) << getEggsPerUnit() << "\t" <<
-    setw(6) << getTotalEggs() << "\t" <<
-    setw(6) << calcUnits() << "\t" <<endl;
+    cout      <<
+    setw(6)   << getTotalEggs() << "\t" <<
+    setw(10)  << calcUnits() << "\t" <<
+    setw(11)  << FarmAnimal::getRevenuePerUnit() * calcUnits() << "\t" <<
+    setw(10)  << FarmAnimal::getCostPerUnit() * calcUnits() << "\t" <<
+    setw(10)  << FarmAnimal::calcProfitPerUnit() * calcUnits() << "\t" << endl;
 }

@@ -5,6 +5,7 @@
 
 #include "Chicken.h"
 #include <iomanip>
+#include <math.h>
 
 Chicken::Chicken(int eggsDays,
                  int eggsUnit,
@@ -48,6 +49,12 @@ int Chicken::getTotalEggs() const {
     return totalEggs;
 }
 
+int Chicken::calcUnits() const {
+    // integer division will truncate the result.
+    // I'm still using floor because I think it's good practice
+    return floor(getTotalEggs() / getEggsPerUnit());
+}
+
 void Chicken::produce(int days){
     setTotalEggs(getTotalEggs() + (days * getEggsPerDay()));
 }
@@ -56,5 +63,6 @@ void Chicken::display() const {
     FarmAnimal::display();
     cout    << getEggsPerDay() << "\t" <<
     setw(6) << getEggsPerUnit() << "\t" <<
-    setw(6) << getTotalEggs() << "\t" << endl;
+    setw(6) << getTotalEggs() << "\t" <<
+    setw(6) << calcUnits() << "\t" <<endl;
 }

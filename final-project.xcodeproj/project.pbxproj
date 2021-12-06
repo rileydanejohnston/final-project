@@ -9,9 +9,8 @@
 /* Begin PBXBuildFile section */
 		C22DBE4F275C9BBA00680CF7 /* Chicken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C22DBE4D275C9BBA00680CF7 /* Chicken.cpp */; };
 		C27AB4C42755D9A700D20F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27AB4C32755D9A700D20F64 /* main.cpp */; };
-		C27AB4CC2755DA8E00D20F64 /* AnimalFigures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27AB4CA2755DA8E00D20F64 /* AnimalFigures.cpp */; };
 		C27AB4CF2755E34400D20F64 /* Cow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27AB4CD2755E34400D20F64 /* Cow.cpp */; };
-		C2E067C4275C27AF003CA177 /* Animal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2E067C2275C27AF003CA177 /* Animal.cpp */; };
+		C2E067C4275C27AF003CA177 /* FarmAnimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +30,10 @@
 		C22DBE4E275C9BBA00680CF7 /* Chicken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chicken.h; sourceTree = "<group>"; };
 		C27AB4C02755D9A700D20F64 /* final-project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "final-project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27AB4C32755D9A700D20F64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		C27AB4CA2755DA8E00D20F64 /* AnimalFigures.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AnimalFigures.cpp; sourceTree = "<group>"; };
-		C27AB4CB2755DA8E00D20F64 /* AnimalFigures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimalFigures.h; sourceTree = "<group>"; };
 		C27AB4CD2755E34400D20F64 /* Cow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cow.cpp; sourceTree = "<group>"; };
 		C27AB4CE2755E34400D20F64 /* Cow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cow.h; sourceTree = "<group>"; };
-		C2E067C2275C27AF003CA177 /* Animal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Animal.cpp; sourceTree = "<group>"; };
-		C2E067C3275C27AF003CA177 /* Animal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FarmAnimal.cpp; sourceTree = "<group>"; };
+		C2E067C3275C27AF003CA177 /* FarmAnimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FarmAnimal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				C27AB4C32755D9A700D20F64 /* main.cpp */,
-				C2E067C3275C27AF003CA177 /* Animal.h */,
-				C2E067C2275C27AF003CA177 /* Animal.cpp */,
+				C2E067C3275C27AF003CA177 /* FarmAnimal.h */,
+				C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */,
 				C27AB4CE2755E34400D20F64 /* Cow.h */,
 				C27AB4CD2755E34400D20F64 /* Cow.cpp */,
 				C22DBE4D275C9BBA00680CF7 /* Chicken.cpp */,
 				C22DBE4E275C9BBA00680CF7 /* Chicken.h */,
-				C27AB4CB2755DA8E00D20F64 /* AnimalFigures.h */,
-				C27AB4CA2755DA8E00D20F64 /* AnimalFigures.cpp */,
 			);
 			path = "final-project";
 			sourceTree = "<group>";
@@ -140,10 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C27AB4CF2755E34400D20F64 /* Cow.cpp in Sources */,
-				C2E067C4275C27AF003CA177 /* Animal.cpp in Sources */,
+				C2E067C4275C27AF003CA177 /* FarmAnimal.cpp in Sources */,
 				C27AB4C42755D9A700D20F64 /* main.cpp in Sources */,
 				C22DBE4F275C9BBA00680CF7 /* Chicken.cpp in Sources */,
-				C27AB4CC2755DA8E00D20F64 /* AnimalFigures.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

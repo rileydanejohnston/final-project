@@ -14,7 +14,7 @@ Chicken::Chicken(int eggsDays,
                  double lbs,
                  double cost,
                  double revenue)
-:AnimalFigures(anml, years, lbs, cost, revenue)
+:FarmAnimal(anml, years, lbs, cost, revenue)
 {
     setEggsPerDay(eggsDays).
     setEggsPerUnit(eggsUnit).
@@ -49,7 +49,7 @@ int Chicken::getTotalEggs() const {
 }
 
 void Chicken::display() const {
-    AnimalFigures::display();
+    FarmAnimal::display();
     cout    << getEggsPerDay() << "\t" <<
     setw(6) << getEggsPerUnit() << "\t" <<
     setw(6) << getTotalEggs() << "\t" << endl;

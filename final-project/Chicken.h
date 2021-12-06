@@ -3,14 +3,14 @@
 // Final project
 
 
-#ifndef CHICKEN_HPP
-#define CHICKEN_HPP
+#ifndef CHICKEN_H
+#define CHICKEN_H
 
-#include "AnimalFigures.h"
+#include "FarmAnimal.h"
 #include <iostream>
 using namespace std;
 
-class Chicken : public AnimalFigures {
+class Chicken : public FarmAnimal {
 private:
     int eggsPerDay;
     int eggsPerUnit;
@@ -32,7 +32,7 @@ public:
     int getEggsPerUnit() const;
     int getTotalEggs() const;
     
-    void display() const;
+    virtual void display() const;
 };
 
 #endif

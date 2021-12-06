@@ -7,10 +7,10 @@
 #define COW_H
 
 #include <iostream>
-#include "AnimalFigures.h"
+#include "FarmAnimal.h"
 using namespace std;
 
-class Cow : public AnimalFigures {
+class Cow : public FarmAnimal {
     
 private:
     double gallonsPerDay;
@@ -31,7 +31,7 @@ public:
     double getGallonsPerDay() const;
     double getTotalGallons() const;
     
-    void display() const;
+    virtual void display() const;
 };
 
 #endif

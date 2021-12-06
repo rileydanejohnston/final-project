@@ -13,7 +13,7 @@ Cow::Cow(double gal,
          double lbs,
          double cost,
          double revenue)
-:AnimalFigures(anml, years, lbs, cost, revenue)
+:FarmAnimal(anml, years, lbs, cost, revenue)
 {
     setGallonsPerDay(gal).
     setTotalGallons(totalGal);
@@ -39,7 +39,7 @@ double Cow::getTotalGallons() const
 }
 
 void Cow::display() const {
-    AnimalFigures::display();
+    FarmAnimal::display();
     cout    << getGallonsPerDay() << "\t" <<
     setw(6) << getTotalGallons() << "\t" << endl;
 }

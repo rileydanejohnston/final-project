@@ -39,6 +39,7 @@ public:
     
     double calcProfitPerUnit() const;
     
+    virtual void produce(int = 1) = 0;
     virtual void display() const;
 };
 

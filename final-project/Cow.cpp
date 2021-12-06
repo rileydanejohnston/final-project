@@ -38,6 +38,10 @@ double Cow::getTotalGallons() const
     return totalGallons;
 }
 
+void Cow::produce(int days){
+    setTotalGallons(getTotalGallons() + (days * getGallonsPerDay()));
+}
+
 void Cow::display() const {
     FarmAnimal::display();
     cout    << getGallonsPerDay() << "\t" <<

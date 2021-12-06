@@ -48,6 +48,10 @@ int Chicken::getTotalEggs() const {
     return totalEggs;
 }
 
+void Chicken::produce(int days){
+    setTotalEggs(getTotalEggs() + (days * getEggsPerDay()));
+}
+
 void Chicken::display() const {
     FarmAnimal::display();
     cout    << getEggsPerDay() << "\t" <<

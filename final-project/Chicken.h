@@ -32,6 +32,7 @@ public:
     int getEggsPerUnit() const;
     int getTotalEggs() const;
     
+    virtual void produce(int = 1);          // adds eggsPerDay * days to totalEggs
     virtual void display() const;
 };
 

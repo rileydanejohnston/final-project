@@ -3,6 +3,7 @@
 // Final project
 
 #include "Crop.h"
+#include "Corn.h"
 #include "FarmAnimal.h"
 #include "Cow.h"
 #include "Chicken.h"
@@ -17,7 +18,7 @@ int main() {
     // Farmer man("Animals", 3, 5, 5.5, "Riley Johnston", "4/3/1991", "Albuquerque, NM");
     // man.display();
     
-    Crop corn("Corn", 3, 5);
+    Corn corn(100, "Corn", 3, 5);
     
     corn.display();
     

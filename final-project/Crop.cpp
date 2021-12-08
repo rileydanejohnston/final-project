@@ -5,7 +5,9 @@
 #include "Crop.h"
 #include <iomanip>
 
-Crop::Crop(const string &type, double cost, double revenue)
+Crop::Crop(const string &type,
+           double cost,
+           double revenue       )
 {
     setCropType(type).
     setCostPerUnit(cost).
@@ -54,8 +56,8 @@ double Crop::calcProfitPerUnit() const
 
 void Crop::display() const
 {
-    cout     << getCropType()       << "\t" <<
-    setw(10) << getRevenuePerUnit() << "\t" <<
-    setw(10) << getCostPerUnit()    << "\t" <<
-    setw(10) << calcProfitPerUnit() << "\t";
+    cout << "Crop Type: "      << setw(15) <<  getCropType()       << endl;
+    cout << "Revenue (unit): " << setw(10) <<  getRevenuePerUnit() << endl;
+    cout << "Cost    (unit): " << setw(10) <<  getCostPerUnit()    << endl;
+    cout << "Profit  (unit): " << setw(10) <<  calcProfitPerUnit() << endl;
 }

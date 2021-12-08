@@ -15,7 +15,7 @@ FarmAnimal::FarmAnimal(const string &anml,
     setAge(years).
     setWeight(lbs).
     setCostPerUnit(cost).
-    setRevenuePerUnit(revenue);;
+    setRevenuePerUnit(revenue);
 }
 
 FarmAnimal& FarmAnimal::setFarmAnimal(const string &anml)

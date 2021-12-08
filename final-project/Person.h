@@ -15,7 +15,9 @@ private:
     string birthday;
     string homeTown;
 public:
-    Person(const string& = "Alex", const string& = "1/1/1991", const string& = "Austin, TX");
+    Person(const string& = "Alex",
+           const string& = "1/1/1991",
+           const string& = "Austin, TX"     );
     
     Person& setName(const string&);
     Person& setBirthday(const string&);

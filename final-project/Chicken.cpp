@@ -14,7 +14,7 @@ Chicken::Chicken(int eggsDays,
                  double years,
                  double lbs,
                  double cost,
-                 double revenue)
+                 double revenue     )
 :FarmAnimal(anml, years, lbs, cost, revenue)
 {
     setEggsPerDay(eggsDays).

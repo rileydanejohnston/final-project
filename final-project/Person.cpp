@@ -5,7 +5,9 @@
 #include "Person.h"
 #include <iomanip>
 
-Person::Person(const string &nm, const string &bday, const string &town)
+Person::Person(const string &nm,
+               const string &bday,
+               const string &town       )
 {
     setName(nm).
     setBirthday(bday).

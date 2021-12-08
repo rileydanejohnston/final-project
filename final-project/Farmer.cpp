@@ -12,7 +12,7 @@ Farmer::Farmer(const string &focus,
                
                const string &nm,
                const string &bday,
-               const string &town):
+               const string &town       ):
 Person(nm, bday, town),
 MAX_RATING(MAX)
 {

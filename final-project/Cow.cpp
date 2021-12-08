@@ -12,7 +12,7 @@ Cow::Cow(double gal,
          double years,
          double lbs,
          double cost,
-         double revenue)
+         double revenue     )
 :FarmAnimal(anml, years, lbs, cost, revenue)
 {
     setGallonsPerDay(gal).

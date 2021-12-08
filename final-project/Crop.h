@@ -16,7 +16,9 @@ private:
     double costPerUnit;
     double revenuePerUnit;
 public:
-    Crop(const string& = "Corn", double = 0.0, double = 0.0);
+    Crop(const string& = "Corn",
+         double = 0.0,
+         double = 0.0       );
     
     Crop& setCropType(const string&);
     Crop& setCostPerUnit(double);

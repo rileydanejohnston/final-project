@@ -26,7 +26,7 @@ public:
            
            const string& = "Alex",
            const string& = "1/1/1991",
-           const string& = "Austin, TX");
+           const string& = "Austin, TX"     );
     
     Farmer& setAreaOfFocus(const string&);
     Farmer& setSkillRating(int);

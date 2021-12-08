@@ -2,6 +2,7 @@
 // CS137
 // Final project
 
+#include "Crop.h"
 #include "FarmAnimal.h"
 #include "Cow.h"
 #include "Chicken.h"
@@ -13,8 +14,12 @@ using namespace std;
 
 int main() {
     
-    Farmer man("Animals", 3, 5, 5.5, "Riley Johnston", "4/3/1991", "Albuquerque, NM");
-    man.display();
+    // Farmer man("Animals", 3, 5, 5.5, "Riley Johnston", "4/3/1991", "Albuquerque, NM");
+    // man.display();
+    
+    Crop corn("Corn", 3, 5);
+    
+    corn.display();
     
     Cow mooMoo2(4.4, 3.3, "Cow", 2.64, 16, 4.4, 8.8);
     Chicken cocky2(16, 12, 50, "Chicken", 1.1, 5.9, 2.87, 3.49);

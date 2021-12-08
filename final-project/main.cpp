@@ -6,13 +6,14 @@
 #include "Cow.h"
 #include "Chicken.h"
 #include "Person.h"
+#include "Farmer.h"
 #include <vector>
 #include <iostream>
 using namespace std;
 
 int main() {
     
-    Person man("Riley Johnston", "4/3/1991", "Albuquerque, NM");
+    Farmer man("Animals", 3, 5, 5.5, "Riley Johnston", "4/3/1991", "Albuquerque, NM");
     man.display();
     
     Cow mooMoo2(4.4, 3.3, "Cow", 2.64, 16, 4.4, 8.8);
@@ -24,6 +25,7 @@ int main() {
     
     do {
         // print menu
+        cout << endl;
         cout << "Farm Menu" << endl;
         cout << "1) Add animal" << endl;
         cout << "2) Delete animal" << endl;

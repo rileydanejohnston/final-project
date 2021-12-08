@@ -15,11 +15,11 @@ private:
     string birthday;
     string homeTown;
 public:
-    Person(string = "Alex", string = "1/1/1991", string = "Austin, TX");
+    Person(const string& = "Alex", const string& = "1/1/1991", const string& = "Austin, TX");
     
-    Person& setName(string);
-    Person& setBirthday(string);
-    Person& setHomeTown(string);
+    Person& setName(const string&);
+    Person& setBirthday(const string&);
+    Person& setHomeTown(const string&);
     
     string getName() const;
     string getBirthday() const;

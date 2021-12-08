@@ -19,16 +19,16 @@ private:
     double yearsExperience;
     
 public:
-    Farmer(string = "Animals",
+    Farmer(const string& = "Animals",
            int = 0,
            const int = 10,
            double = 0.0,
            
-           string = "Alex",
-           string = "1/1/1991",
-           string = "Austin, TX");
+           const string& = "Alex",
+           const string& = "1/1/1991",
+           const string& = "Austin, TX");
     
-    Farmer& setAreaOfFocus(string);
+    Farmer& setAreaOfFocus(const string&);
     Farmer& setSkillRating(int);
     // can't set a const? validate in main maybe?
     Farmer& setYearsExperience(double);

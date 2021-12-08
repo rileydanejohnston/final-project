@@ -5,14 +5,14 @@
 #include "Farmer.h"
 #include <iomanip>
 
-Farmer::Farmer(string focus,
+Farmer::Farmer(const string &focus,
                int rating,
                const int MAX,
                double exp,
                
-               string nm,
-               string bday,
-               string town):
+               const string &nm,
+               const string &bday,
+               const string &town):
 Person(nm, bday, town),
 MAX_RATING(MAX)
 {
@@ -21,7 +21,7 @@ MAX_RATING(MAX)
     setYearsExperience(exp);
 }
 
-Farmer& Farmer::setAreaOfFocus(string focus)
+Farmer& Farmer::setAreaOfFocus(const string &focus)
 {
     areaOfFocus = focus;
     return *this;

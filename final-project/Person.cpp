@@ -5,26 +5,26 @@
 #include "Person.h"
 #include <iomanip>
 
-Person::Person(string nm, string bday, string town)
+Person::Person(const string &nm, const string &bday, const string &town)
 {
     setName(nm).
     setBirthday(bday).
     setHomeTown(town);
 }
 
-Person& Person::setName(string nm)
+Person& Person::setName(const string &nm)
 {
     name = nm;
     return *this;
 }
 
-Person& Person::setBirthday(string bday)
+Person& Person::setBirthday(const string &bday)
 {
     birthday = bday;
     return *this;
 }
 
-Person& Person::setHomeTown(string town)
+Person& Person::setHomeTown(const string &town)
 {
     homeTown = town;
     return *this;

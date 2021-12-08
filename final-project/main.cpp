@@ -5,13 +5,15 @@
 #include "FarmAnimal.h"
 #include "Cow.h"
 #include "Chicken.h"
+#include "Person.h"
 #include <vector>
 #include <iostream>
 using namespace std;
 
 int main() {
     
-    
+    Person man("Riley Johnston", "4/3/1991", "Albuquerque, NM");
+    man.display();
     
     Cow mooMoo2(4.4, 3.3, "Cow", 2.64, 16, 4.4, 8.8);
     Chicken cocky2(16, 12, 50, "Chicken", 1.1, 5.9, 2.87, 3.49);

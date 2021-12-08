@@ -10,6 +10,7 @@
 		C22DBE4F275C9BBA00680CF7 /* Chicken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C22DBE4D275C9BBA00680CF7 /* Chicken.cpp */; };
 		C27AB4C42755D9A700D20F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27AB4C32755D9A700D20F64 /* main.cpp */; };
 		C27AB4CF2755E34400D20F64 /* Cow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C27AB4CD2755E34400D20F64 /* Cow.cpp */; };
+		C28B2926276036BE0005152D /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C28B2924276036BE0005152D /* Person.cpp */; };
 		C2E067C4275C27AF003CA177 /* FarmAnimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,8 @@
 		C27AB4C32755D9A700D20F64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C27AB4CD2755E34400D20F64 /* Cow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cow.cpp; sourceTree = "<group>"; };
 		C27AB4CE2755E34400D20F64 /* Cow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cow.h; sourceTree = "<group>"; };
+		C28B2924276036BE0005152D /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
+		C28B2925276036BE0005152D /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FarmAnimal.cpp; sourceTree = "<group>"; };
 		C2E067C3275C27AF003CA177 /* FarmAnimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FarmAnimal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				C27AB4C32755D9A700D20F64 /* main.cpp */,
+				C28B2924276036BE0005152D /* Person.cpp */,
+				C28B2925276036BE0005152D /* Person.h */,
 				C2E067C3275C27AF003CA177 /* FarmAnimal.h */,
 				C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */,
 				C27AB4CE2755E34400D20F64 /* Cow.h */,
@@ -137,6 +142,7 @@
 				C27AB4CF2755E34400D20F64 /* Cow.cpp in Sources */,
 				C2E067C4275C27AF003CA177 /* FarmAnimal.cpp in Sources */,
 				C27AB4C42755D9A700D20F64 /* main.cpp in Sources */,
+				C28B2926276036BE0005152D /* Person.cpp in Sources */,
 				C22DBE4F275C9BBA00680CF7 /* Chicken.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

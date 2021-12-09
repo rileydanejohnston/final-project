@@ -4,6 +4,7 @@
 
 #include "Crop.h"
 #include "Corn.h"
+#include "AppleTree.h"
 #include "FarmAnimal.h"
 #include "Cow.h"
 #include "Chicken.h"
@@ -18,9 +19,9 @@ int main() {
     // Farmer man("Animals", 3, 5, 5.5, "Riley Johnston", "4/3/1991", "Albuquerque, NM");
     // man.display();
     
-    Corn corn(100, "Corn", 3, 5);
+    AppleTree apples(10, 500, "Apple Tree", 3, 5);
     
-    corn.display();
+    apples.display();
     
     Cow mooMoo2(4.4, 3.3, "Cow", 2.64, 16, 4.4, 8.8);
     Chicken cocky2(16, 12, 50, "Chicken", 1.1, 5.9, 2.87, 3.49);

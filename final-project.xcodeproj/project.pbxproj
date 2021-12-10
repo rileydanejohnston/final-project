@@ -16,6 +16,7 @@
 		C28B292F276107B60005152D /* Corn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C28B292D276107B60005152D /* Corn.cpp */; };
 		C28B29322761C8550005152D /* AppleTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C28B29302761C8550005152D /* AppleTree.cpp */; };
 		C2E067C4275C27AF003CA177 /* FarmAnimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */; };
+		C2F8423C2762CE1D008D8AD3 /* Farm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2F8423A2762CE1D008D8AD3 /* Farm.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		C28B29312761C8550005152D /* AppleTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleTree.h; sourceTree = "<group>"; };
 		C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FarmAnimal.cpp; sourceTree = "<group>"; };
 		C2E067C3275C27AF003CA177 /* FarmAnimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FarmAnimal.h; sourceTree = "<group>"; };
+		C2F8423A2762CE1D008D8AD3 /* Farm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Farm.cpp; sourceTree = "<group>"; };
+		C2F8423B2762CE1D008D8AD3 /* Farm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Farm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,22 +85,24 @@
 			isa = PBXGroup;
 			children = (
 				C27AB4C32755D9A700D20F64 /* main.cpp */,
-				C28B29302761C8550005152D /* AppleTree.cpp */,
 				C28B29312761C8550005152D /* AppleTree.h */,
-				C28B292A276058510005152D /* Crop.cpp */,
-				C28B292B276058510005152D /* Crop.h */,
-				C28B292D276107B60005152D /* Corn.cpp */,
-				C28B292E276107B60005152D /* Corn.h */,
-				C28B292727603EC50005152D /* Farmer.cpp */,
-				C28B292827603EC50005152D /* Farmer.h */,
-				C28B2924276036BE0005152D /* Person.cpp */,
-				C28B2925276036BE0005152D /* Person.h */,
+				C28B29302761C8550005152D /* AppleTree.cpp */,
+				C2F8423B2762CE1D008D8AD3 /* Farm.h */,
+				C2F8423A2762CE1D008D8AD3 /* Farm.cpp */,
 				C2E067C3275C27AF003CA177 /* FarmAnimal.h */,
 				C2E067C2275C27AF003CA177 /* FarmAnimal.cpp */,
+				C28B292827603EC50005152D /* Farmer.h */,
+				C28B292727603EC50005152D /* Farmer.cpp */,
+				C22DBE4E275C9BBA00680CF7 /* Chicken.h */,
+				C22DBE4D275C9BBA00680CF7 /* Chicken.cpp */,
 				C27AB4CE2755E34400D20F64 /* Cow.h */,
 				C27AB4CD2755E34400D20F64 /* Cow.cpp */,
-				C22DBE4D275C9BBA00680CF7 /* Chicken.cpp */,
-				C22DBE4E275C9BBA00680CF7 /* Chicken.h */,
+				C28B292B276058510005152D /* Crop.h */,
+				C28B292A276058510005152D /* Crop.cpp */,
+				C28B292E276107B60005152D /* Corn.h */,
+				C28B292D276107B60005152D /* Corn.cpp */,
+				C28B2925276036BE0005152D /* Person.h */,
+				C28B2924276036BE0005152D /* Person.cpp */,
 			);
 			path = "final-project";
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				C28B29322761C8550005152D /* AppleTree.cpp in Sources */,
 				C28B2926276036BE0005152D /* Person.cpp in Sources */,
 				C22DBE4F275C9BBA00680CF7 /* Chicken.cpp in Sources */,
+				C2F8423C2762CE1D008D8AD3 /* Farm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

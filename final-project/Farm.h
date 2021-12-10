@@ -45,13 +45,6 @@ public:
     double getCost() const;
     double calcProfit() const;
     
-    // bool?
-    //template <typename T>
-    //void addAnimal(const T&);
-    
-    void addChicken(const Chicken&);
-    void addCow(const Cow&);
-    
     bool removeAnimal(int);
     
     unsigned long getAnimalSize() const;
@@ -65,6 +58,13 @@ public:
     
     void deleteAnimalList() const;
     void displayAnimals() const;
+    
+    // return bool?
+    template <typename T>
+    void addAnimal(const T &anml)
+    {
+        animals.push_back(&anml);
+    }
     
 };
 

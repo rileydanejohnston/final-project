@@ -109,7 +109,7 @@ int main() {
                     Chicken *newChicken = new Chicken(eggsPerDay, eggsPerUnit, totalEggs, animal, years, lbs, cost, revenue);
                     
                     // passing what newChicken is pointing at..
-                    farm.addChicken(*newChicken);
+                    farm.addAnimal(*newChicken);
                     
                     cout << "Added one chicken!" << endl;
                 }
@@ -141,7 +141,7 @@ int main() {
                     Cow *newCow = new Cow(avgGal, totalGal, animal, years, lbs, cost, revenue);
                     
                     // passing what newCow is pointing at..
-                    farm.addCow(*newCow);
+                    farm.addAnimal(*newCow);
                     
                     cout << "Added one cow!" << endl;
                 }

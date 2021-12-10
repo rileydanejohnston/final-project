@@ -53,24 +53,6 @@ double Farm::calcProfit() const
     return getRevenue() - getCost();
 }
 
-/*
-template <typename T>
-void Farm::addAnimal(const T &anml)
-{
-    animals.push_back(&anml);
-}
-*/
-
-void Farm::addChicken(const Chicken& newChicken)
-{
-    animals.push_back(&newChicken);
-}
-
-void Farm::addCow(const Cow& newCow)
-{
-    animals.push_back(&newCow);
-}
-
 bool Farm::removeAnimal(int index)
 {
     // input is invalid
@@ -79,6 +61,8 @@ bool Farm::removeAnimal(int index)
         return false;
     }
     
+    // i'm not 100% on this. 
+    delete animals[index - 1];
     animals.erase(animals.begin() + (index - 1));
     return true;
 }

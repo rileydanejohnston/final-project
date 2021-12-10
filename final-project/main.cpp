@@ -24,7 +24,10 @@ int main() {
     // animal variables
     string animal;
     double avgGal= 0.0, totalGal = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
-    int eggsPerDay = 0, eggsPerUnit = 0, totalEggs = 0, removeAnimal = 0;
+    int eggsPerDay = 0, eggsPerUnit = 0, totalEggs = 0, removeItem = 0;
+    // crop variables
+    double lbsUnit, lbsApple;
+    string type;
     
     cout << "Name: ";
     getline(cin, name);
@@ -60,10 +63,13 @@ int main() {
         cout << "Farm Menu" << endl;
         cout << "-------------------" << endl;
         cout << "1) Add animal" << endl;
-        cout << "2) Delete animal" << endl;
-        cout << "3) Display animals" << endl;
-        cout << "4) Display farm" << endl;
-        cout << "5) Save farm to file" << endl;
+        cout << "2) Remove animal" << endl;
+        cout << "3) Add crops" << endl;
+        cout << "4) Remove crops" << endl;
+        cout << "5) Display crops" << endl;
+        cout << "6) Display crops" << endl;
+        cout << "7) Display farm" << endl;
+        cout << "8) Save farm to file" << endl;
         cout << "q) Quit" << endl << endl;
         cout << "Selection: ";
         cin >> selection;
@@ -163,12 +169,12 @@ int main() {
                 farm.deleteAnimalList();
                 cout << "Which animal do you want to remove?" << endl;
                 cout << "Remove #: ";
-                cin >> removeAnimal;
+                cin >> removeItem;
                 cin.ignore();
                 
-                if (farm.removeAnimal(removeAnimal))
+                if (farm.removeAnimal(removeItem))
                 {
-                    cout << "Success! Animal " << removeAnimal << " was removed!" << endl;
+                    cout << "Success! Animal " << removeItem << " was removed!" << endl;
                 }
                 else
                 {
@@ -179,9 +185,90 @@ int main() {
         else if(selection == '3'){
             // COWS cout << "Animal\t\tAge\t\tWeight\t\tGallons\t\tRevenue\t\t  Cost\t\tProfit" << endl;
             // CHICKENS cout << "Animal\t\tAge\t\tWeight\t\t  Eggs\t\tUnits\t\tRevenue\t\t  Cost\t\tProfit" << endl;
-            cout << "You selected number 3" << endl;
+            do {
+                cout << "1) Apple Tree" << endl;
+                cout << "2) Corn" << endl << endl;
+                cout << "Selection: ";
+                cin >> selection;
+                cin.ignore();
+                
+                if (selection == '1'){
+                    cout << "Type (apple tree): ";
+                    getline(cin, type);
+                    
+                    cout << "Tree yield (lbs of apples): ";
+                    cin >> lbsApple;
+                    
+                    cout << "Unit size (lbs per unit): ";
+                    cin >> lbsUnit;
+                    
+                    cout << "Cost per unit?: ";
+                    cin >> cost;
+                    
+                    cout << "Revenue per unit?: ";
+                    cin >> revenue;
+                    cin.ignore();
+                    
+                    AppleTree *newTree = new AppleTree(lbsUnit, lbsApple, type, cost, revenue);
+                    
+                    // passing what newChicken is pointing at..
+                    farm.addCrop(*newTree);
+                    
+                    cout << "Added one apple tree!" << endl;
+                }
+                else if (selection == '2'){
+                    cout << "Type (apple tree): ";
+                    getline(cin, type);
+                    
+                    cout << "Tree yield (lbs of apples): ";
+                    cin >> lbsApple;
+                    
+                    cout << "Unit size (lbs per unit): ";
+                    cin >> lbsUnit;
+                    
+                    cout << "Cost per unit?: ";
+                    cin >> cost;
+                    
+                    cout << "Revenue per unit?: ";
+                    cin >> revenue;
+                    cin.ignore();
+                    
+                    AppleTree *newTree = new AppleTree(lbsUnit, lbsApple, type, cost, revenue);
+                    
+                    // passing what newChicken is pointing at..
+                    farm.addCrop(*newTree);
+                    
+                    cout << "Added one apple tree!" << endl;
+                }
+                else if (selection != '1' || selection != '2'){
+                    cout << "Invalid selection." << endl;
+                }
+            }
+            while (selection != '1' && selection != '2');
+            
         }
         else if(selection == '4'){
+            if (farm.getCropSize() == 0)
+            {
+                cout << "There are no crops to remove." << endl;
+            }
+            else
+            {
+                farm.deleteCropList();
+                cout << "Which crop do you want to remove?" << endl;
+                cout << "Remove #: ";
+                cin >> removeItem;
+                cin.ignore();
+                
+                if (farm.removeCrop(removeItem))
+                {
+                    cout << "Success! Crop " << removeItem << " was removed!" << endl;
+                }
+                else
+                {
+                    cout << "Error! The crop was not deleted." << endl;
+                }
+            }
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

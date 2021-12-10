@@ -24,6 +24,11 @@ Farm::~Farm()
     {
         delete animals[i];
     }
+    
+    for (int i = 0; i < getCropSize(); ++i)
+    {
+        delete crops[i];
+    }
 }
 
 Farm& Farm::setRevenue(double rev)
@@ -67,9 +72,28 @@ bool Farm::removeAnimal(int index)
     return true;
 }
 
+bool Farm::removeCrop(int index)
+{
+    // input is invalid
+    if (index < 1 || index > getCropSize())
+    {
+        return false;
+    }
+    
+    // i'm not 100% on this.
+    delete crops[index - 1];
+    crops.erase(crops.begin() + (index - 1));
+    return true;
+}
+
 unsigned long Farm::getAnimalSize() const
 {
     return animals.size();
+}
+
+unsigned long Farm::getCropSize() const
+{
+    return crops.size();
 }
 
 void Farm::deleteAnimalList() const
@@ -80,10 +104,26 @@ void Farm::deleteAnimalList() const
     }
 }
 
+void Farm::deleteCropList() const
+{
+    for (int i = 0; i < getCropSize(); ++i)
+    {
+        cout << i + 1 << ") " << crops[i]->getCropType() << endl;
+    }
+}
+
 void Farm::displayAnimals() const
 {
     for (int i = 0; i < getAnimalSize(); ++i)
     {
         animals[i]->display();
+    }
+}
+
+void Farm::displayCrops() const
+{
+    for (int i = 0; i < getCropSize(); ++i)
+    {
+        crops[i]->display();
     }
 }

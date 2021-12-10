@@ -24,7 +24,7 @@ private:
     Farmer headFarmer;
     vector<const FarmAnimal*> animals;
     // vector<Farmers*> farmers;
-    // vector<Crop*> crops;
+    vector<const Crop*> crops;
    
     double revenue;
     double cost;
@@ -46,8 +46,10 @@ public:
     double calcProfit() const;
     
     bool removeAnimal(int);
+    bool removeCrop(int);
     
     unsigned long getAnimalSize() const;
+    unsigned long getCropSize() const;
     // add crops
     // add people
     // add animals
@@ -57,13 +59,23 @@ public:
     // remove animals
     
     void deleteAnimalList() const;
+    void deleteCropList() const;
+    
     void displayAnimals() const;
+    void displayCrops() const;
     
     // return bool?
     template <typename T>
     void addAnimal(const T &anml)
     {
         animals.push_back(&anml);
+    }
+    
+    // return bool?
+    template <typename T>
+    void addCrop(const T &newCrop)
+    {
+        crops.push_back(&newCrop);
     }
     
 };

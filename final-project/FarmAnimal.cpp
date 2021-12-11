@@ -9,13 +9,15 @@ FarmAnimal::FarmAnimal(const string &anml,
                double years,
                double lbs,
                double cost,
-               double revenue     )
+               double revenue,
+               double numPerDay     )
 {
     setFarmAnimal(anml).
     setAge(years).
     setWeight(lbs).
     setCostPerUnit(cost).
-    setRevenuePerUnit(revenue);
+    setRevenuePerUnit(revenue).
+    setAveragePerDay(numPerDay);
 }
 
 FarmAnimal& FarmAnimal::setFarmAnimal(const string &anml)
@@ -48,6 +50,12 @@ FarmAnimal& FarmAnimal::setRevenuePerUnit(double revenue){
     return *this;
 }
 
+FarmAnimal& FarmAnimal::setAveragePerDay(double numPerDay)
+{
+    averagePerDay = (numPerDay >= 0 && numPerDay <= 50.0) ? numPerDay : 1;
+    return *this;
+}
+
 string FarmAnimal::getFarmAnimal() const
 {
     return animal;
@@ -73,9 +81,30 @@ double FarmAnimal::getRevenuePerUnit() const
     return revenuePerUnit;
 }
 
-double FarmAnimal::calcProfitPerUnit() const
+double FarmAnimal::getAveragePerDay() const
 {
-    return getRevenuePerUnit() - getCostPerUnit();
+    return averagePerDay;
+}
+
+double FarmAnimal::calcRevenue() const
+{
+    return getRevenuePerUnit() * produce();
+}
+
+double FarmAnimal::calcCost() const
+{
+    return getCostPerUnit() * produce();
+}
+
+double FarmAnimal::calcProfit() const
+{
+    return calcRevenue() - calcCost();
+}
+
+// produce will just be for 1 year
+double FarmAnimal::produce() const
+{
+    return getAveragePerDay() * 365;
 }
 
 void FarmAnimal::display() const {

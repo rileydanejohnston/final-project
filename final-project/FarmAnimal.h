@@ -17,13 +17,15 @@ private:
     double weight;
     double costPerUnit;
     double revenuePerUnit;
+    double averagePerDay;
     
 public:
     FarmAnimal(const string& = "Cow",
                double = 0.0,
                double = 0.0,
                double = 0.0,
-               double = 0.0    );
+               double = 0.0,
+               double = 0.0         );
     virtual ~FarmAnimal() = default;
     
     FarmAnimal& setFarmAnimal(const string&);
@@ -31,19 +33,21 @@ public:
     FarmAnimal& setWeight(double);
     FarmAnimal& setCostPerUnit(double);
     FarmAnimal& setRevenuePerUnit(double);
+    FarmAnimal& setAveragePerDay(double);
     
     string getFarmAnimal() const;
     double getAge() const;
     double getWeight() const;
     double getCostPerUnit() const;
     double getRevenuePerUnit() const;
-    double calcProfitPerUnit() const;
+    double getAveragePerDay() const;
     
-    virtual double calcRevenue() const = 0;
-    virtual double calcCost() const = 0;
-    virtual double calcProfit() const = 0;
+    virtual double calcRevenue() const;
+    virtual double calcCost() const;
+    virtual double calcProfit() const;
     
-    virtual void produce(int = 1) = 0;
+    // produce will just be for 1 year
+    virtual double produce() const;
     virtual void display() const;
 };
 

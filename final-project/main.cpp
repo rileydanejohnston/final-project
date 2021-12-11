@@ -149,7 +149,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    Cow *newCow = new Cow(avgGal, totalGal, animal, years, lbs, cost, revenue);
+                    Cow *newCow = new Cow(totalGal, animal, years, lbs, cost, revenue, avgGal);
                     
                     // passing what newCow is pointing at..
                     farm.addAnimal(*newCow);

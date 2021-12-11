@@ -6,31 +6,21 @@
 #include "Cow.h"
 #include <iomanip>
 
-Cow::Cow(double gal,
-         double totalGal,
+Cow::Cow(double totalGal,
          const string &anml,
          double years,
          double lbs,
          double cost,
-         double revenue     )
-:FarmAnimal(anml, years, lbs, cost, revenue)
+         double revenue,
+         double numPerDay       )
+:FarmAnimal(anml, years, lbs, cost, revenue, numPerDay)
 {
-    setGallonsPerDay(gal).
     setTotalGallons(totalGal);
-}
-
-Cow& Cow::setGallonsPerDay(double gal){
-    gallonsPerDay = (gal >= 0.0 && gal <= 25.0) ? gal : 0.0;
-    return *this;
 }
 
 Cow& Cow::setTotalGallons(double totalGal){
     totalGallons = (totalGal >= 0.0 && totalGal <= 15000.0) ? totalGal : 0.0;
     return *this;
-}
-
-double Cow::getGallonsPerDay() const {
-    return gallonsPerDay;
 }
 
 double Cow::getTotalGallons() const
@@ -40,21 +30,17 @@ double Cow::getTotalGallons() const
 
 double Cow::calcRevenue() const
 {
-    return FarmAnimal::getRevenuePerUnit() * getTotalGallons();
+    return FarmAnimal::calcRevenue() +  (getTotalGallons() * FarmAnimal::getRevenuePerUnit());
 }
 
 double Cow::calcCost() const
 {
-    return FarmAnimal::getCostPerUnit() * getTotalGallons();
+    return FarmAnimal::calcCost() +  (getTotalGallons() * FarmAnimal::getCostPerUnit());
 }
 
 double Cow::calcProfit() const
 {
-    return FarmAnimal::getCostPerUnit() * getTotalGallons();
-}
-
-void Cow::produce(int days){
-    setTotalGallons(getTotalGallons() + (days * getGallonsPerDay()));
+    return calcRevenue() - calcCost();
 }
 
 void Cow::display() const {

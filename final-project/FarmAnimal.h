@@ -41,13 +41,12 @@ public:
     double getCostPerUnit() const;
     double getRevenuePerUnit() const;
     double getAveragePerDay() const;
+    double calcYearProduction() const;
     
     virtual double calcRevenue() const;
     virtual double calcCost() const;
     virtual double calcProfit() const;
     
-    // produce will just be for 1 year
-    virtual double produce() const;
     virtual void display() const;
 };
 

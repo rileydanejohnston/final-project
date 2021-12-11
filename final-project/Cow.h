@@ -13,30 +13,26 @@ using namespace std;
 class Cow : public FarmAnimal {
     
 private:
-    double gallonsPerDay;
     double totalGallons;
     
 public:
     Cow(double = 0.0,
-        double = 0.0,
         const string& = "Cow",
+        double = 0.0,
         double = 0.0,
         double = 0.0,
         double = 0.0,
         double = 0.0        );
     virtual ~Cow() = default;       // marking virtual for clarity
     
-    Cow& setGallonsPerDay(double);
     Cow& setTotalGallons(double);
     
-    double getGallonsPerDay() const;
     double getTotalGallons() const;
     
-    double calcRevenue() const;
-    double calcCost() const;
-    double calcProfit() const;
+    virtual double calcRevenue() const;
+    virtual double calcCost() const;
+    virtual double calcProfit() const;
     
-    virtual void produce(int = 1);
     virtual void display() const;
 };
 

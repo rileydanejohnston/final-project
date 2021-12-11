@@ -86,25 +86,24 @@ double FarmAnimal::getAveragePerDay() const
     return averagePerDay;
 }
 
+double FarmAnimal::calcYearProduction() const
+{
+    return getAveragePerDay() * 365;
+}
+
 double FarmAnimal::calcRevenue() const
 {
-    return getRevenuePerUnit() * produce();
+    return getRevenuePerUnit() * calcYearProduction();
 }
 
 double FarmAnimal::calcCost() const
 {
-    return getCostPerUnit() * produce();
+    return getCostPerUnit() * calcYearProduction();
 }
 
 double FarmAnimal::calcProfit() const
 {
     return calcRevenue() - calcCost();
-}
-
-// produce will just be for 1 year
-double FarmAnimal::produce() const
-{
-    return getAveragePerDay() * 365;
 }
 
 void FarmAnimal::display() const {

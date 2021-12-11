@@ -7,24 +7,18 @@
 #include <iomanip>
 #include <math.h>
 
-Chicken::Chicken(int eggsDays,
-                 int eggsUnit,
+Chicken::Chicken(int eggsUnit,
                  int eggsSum,
                  const string &anml,
                  double years,
                  double lbs,
                  double cost,
-                 double revenue     )
-:FarmAnimal(anml, years, lbs, cost, revenue)
+                 double revenue,
+                 double eggsDays)
+:FarmAnimal(anml, years, lbs, cost, revenue, eggsDays)
 {
-    setEggsPerDay(eggsDays).
     setEggsPerUnit(eggsUnit).
     setTotalEggs(eggsSum);
-}
-
-Chicken& Chicken::setEggsPerDay(int eggDays){
-    eggsPerDay = (eggDays >= 0 && eggDays <= 3) ? eggDays : 0;
-    return *this;
 }
 
 Chicken& Chicken::setEggsPerUnit(int eggsUnit){
@@ -35,10 +29,6 @@ Chicken& Chicken::setEggsPerUnit(int eggsUnit){
 Chicken& Chicken::setTotalEggs(int eggsSum){
     totalEggs = (eggsSum >= 0 && eggsSum <= 1000) ? eggsSum : 0;
     return *this;
-}
-
-int Chicken::getEggsPerDay() const {
-    return eggsPerDay;
 }
 
 int Chicken::getEggsPerUnit() const {
@@ -52,7 +42,8 @@ int Chicken::getTotalEggs() const {
 int Chicken::calcUnits() const {
     // integer division will truncate the result.
     // I'm still using floor because I think it's good practice
-    return floor(getTotalEggs() / getEggsPerUnit());
+    int eggSum = FarmAnimal::calcYearProduction() + getTotalEggs();
+    return floor(eggSum / getEggsPerUnit());
 }
 
 double Chicken::calcRevenue() const
@@ -67,11 +58,7 @@ double Chicken::calcCost() const
 
 double Chicken::calcProfit() const
 {
-    return FarmAnimal::getCostPerUnit() * calcUnits();
-}
-
-void Chicken::produce(int days){
-    setTotalEggs(getTotalEggs() + (days * getEggsPerDay()));
+    return calcRevenue() - calcCost();
 }
 
 void Chicken::display() const {

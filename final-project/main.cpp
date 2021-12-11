@@ -117,7 +117,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    Chicken *newChicken = new Chicken(eggsPerDay, eggsPerUnit, totalEggs, animal, years, lbs, cost, revenue);
+                    Chicken *newChicken = new Chicken(eggsPerUnit, totalEggs, animal, years, lbs, cost, revenue, eggsPerDay);
                     
                     // passing what newChicken is pointing at..
                     farm.addAnimal(*newChicken);

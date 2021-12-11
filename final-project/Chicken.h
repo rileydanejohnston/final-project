@@ -16,21 +16,19 @@ private:
     int eggsPerUnit;
     int totalEggs;
 public:
-    Chicken(int = 1,
-            int = 12,
+    Chicken(int = 12,
             int = 0,
             const string& = "Cow",
             double = 0.0,
             double = 0.0,
             double = 0.0,
-            double = 0.0    );
+            double = 0.0,
+            double = 0.0        );
     virtual ~Chicken() = default;    // marking virtual for clarity
     
-    Chicken& setEggsPerDay(int);
     Chicken& setEggsPerUnit(int);       // 12 eggs per dozen. You wouldn't sell a single egg
     Chicken& setTotalEggs(int);
     
-    int getEggsPerDay() const;
     int getEggsPerUnit() const;
     int getTotalEggs() const;
     
@@ -40,7 +38,6 @@ public:
     virtual double calcCost() const;
     virtual double calcProfit() const;
     
-    virtual void produce(int = 1);          // adds eggsPerDay * days to totalEggs
     virtual void display() const;
 };
 

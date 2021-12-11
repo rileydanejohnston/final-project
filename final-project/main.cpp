@@ -66,7 +66,7 @@ int main() {
         cout << "2) Add crops" << endl;
         cout << "3) Remove animal" << endl;
         cout << "4) Remove crops" << endl;
-        cout << "5) Display crops" << endl;
+        cout << "5) Display animals" << endl;
         cout << "6) Display crops" << endl;
         cout << "7) Display farm" << endl;
         cout << "8) Save farm to file" << endl;
@@ -266,6 +266,14 @@ int main() {
                     cout << "Error! The crop was not deleted." << endl;
                 }
             }
+        }
+        else if (selection == '5')
+        {
+            farm.displayAnimals();
+        }
+        else if (selection == '6')
+        {
+            farm.displayCrops();
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

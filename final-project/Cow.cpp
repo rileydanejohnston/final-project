@@ -38,6 +38,21 @@ double Cow::getTotalGallons() const
     return totalGallons;
 }
 
+double Cow::calcRevenue() const
+{
+    return FarmAnimal::getRevenuePerUnit() * getTotalGallons();
+}
+
+double Cow::calcCost() const
+{
+    return FarmAnimal::getCostPerUnit() * getTotalGallons();
+}
+
+double Cow::calcProfit() const
+{
+    return FarmAnimal::getCostPerUnit() * getTotalGallons();
+}
+
 void Cow::produce(int days){
     setTotalGallons(getTotalGallons() + (days * getGallonsPerDay()));
 }
@@ -46,7 +61,7 @@ void Cow::display() const {
     FarmAnimal::display();
     cout      <<
     setw(10)  << getTotalGallons() << "\t" <<
-    setw(11)  << FarmAnimal::getRevenuePerUnit() * getTotalGallons() << "\t" <<
-    setw(10)  << FarmAnimal::getCostPerUnit() * getTotalGallons() << "\t" <<
-    setw(10)  << FarmAnimal::calcProfitPerUnit() * getTotalGallons() << "\t" << endl;
+    setw(11)  << calcRevenue() << "\t" <<
+    setw(10)  << calcCost() << "\t" <<
+    setw(10)  << calcProfit() << "\t" << endl;
 }

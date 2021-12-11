@@ -28,6 +28,9 @@ int main() {
     // crop variables
     double lbsUnit, lbsApple, acres;
     string type;
+    // produce variables
+    int days = 0;
+    double revenueSum = 0.0, costSum = 0.0;
     
     cout << "Name: ";
     getline(cin, name);
@@ -68,6 +71,8 @@ int main() {
         cout << "4) Remove crops" << endl;
         cout << "5) Display animals" << endl;
         cout << "6) Display crops" << endl;
+        cout << "7) Produce" << endl;
+        
         cout << "7) Display farm" << endl;
         cout << "8) Save farm to file" << endl;
         cout << "q) Quit" << endl << endl;
@@ -274,6 +279,18 @@ int main() {
         else if (selection == '6')
         {
             farm.displayCrops();
+        }
+        else if (selection == '7')
+        {
+            // call produce on all animals - creates revenue/cost
+            // pull revenue into farm class
+            
+            // validate this?
+            // the 
+            cout << "Days (for cows and chickens to produce): ";
+            cin >> days;
+            
+            //farm.produce(days);
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

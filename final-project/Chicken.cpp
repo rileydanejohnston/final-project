@@ -55,6 +55,21 @@ int Chicken::calcUnits() const {
     return floor(getTotalEggs() / getEggsPerUnit());
 }
 
+double Chicken::calcRevenue() const
+{
+    return FarmAnimal::getRevenuePerUnit() * calcUnits();
+}
+
+double Chicken::calcCost() const
+{
+    return FarmAnimal::getCostPerUnit() * calcUnits();
+}
+
+double Chicken::calcProfit() const
+{
+    return FarmAnimal::getCostPerUnit() * calcUnits();
+}
+
 void Chicken::produce(int days){
     setTotalEggs(getTotalEggs() + (days * getEggsPerDay()));
 }
@@ -64,7 +79,7 @@ void Chicken::display() const {
     cout      <<
     setw(6)   << getTotalEggs() << "\t" <<
     setw(10)  << calcUnits() << "\t" <<
-    setw(11)  << FarmAnimal::getRevenuePerUnit() * calcUnits() << "\t" <<
-    setw(10)  << FarmAnimal::getCostPerUnit() * calcUnits() << "\t" <<
-    setw(10)  << FarmAnimal::calcProfitPerUnit() * calcUnits() << "\t" << endl;
+    setw(11)  << calcRevenue() << "\t" <<
+    setw(10)  << calcCost() << "\t" <<
+    setw(10)  << calcProfit() << "\t" << endl;
 }

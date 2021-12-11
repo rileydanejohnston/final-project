@@ -37,8 +37,11 @@ public:
     double getWeight() const;
     double getCostPerUnit() const;
     double getRevenuePerUnit() const;
-    
     double calcProfitPerUnit() const;
+    
+    virtual double calcRevenue() const = 0;
+    virtual double calcCost() const = 0;
+    virtual double calcProfit() const = 0;
     
     virtual void produce(int = 1) = 0;
     virtual void display() const;

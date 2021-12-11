@@ -36,6 +36,10 @@ public:
     
     int calcUnits() const;
     
+    virtual double calcRevenue() const;
+    virtual double calcCost() const;
+    virtual double calcProfit() const;
+    
     virtual void produce(int = 1);          // adds eggsPerDay * days to totalEggs
     virtual void display() const;
 };

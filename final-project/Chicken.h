@@ -15,10 +15,11 @@ private:
     int eggsPerDay;
     int eggsPerUnit;
     int totalEggs;
+    const string animal = "Chicken";
 public:
     Chicken(int = 12,
             int = 0,
-            const string& = "Cow",
+            const string& = "ID-1",
             double = 0.0,
             double = 0.0,
             double = 0.0,
@@ -31,6 +32,7 @@ public:
     
     int getEggsPerUnit() const;
     int getTotalEggs() const;
+    string getAnimal() const;
     
     int calcUnits() const;
     

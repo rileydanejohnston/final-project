@@ -39,6 +39,10 @@ int Chicken::getTotalEggs() const {
     return totalEggs;
 }
 
+string Chicken::getAnimal() const {
+    return animal;
+}
+
 int Chicken::calcUnits() const {
     // integer division will truncate the result.
     // I'm still using floor because I think it's good practice
@@ -64,6 +68,7 @@ double Chicken::calcProfit() const
 }
 
 void Chicken::display() const {
+    cout << getAnimal() << endl;
     FarmAnimal::display();
     cout      <<
     setw(6)   << getTotalEggs() << "\t" <<

@@ -71,6 +71,7 @@ double Cow::calcProfit() const
 }
 
 void Cow::display() const {
+    cout << endl;
     cout << "Animal"               << setw(26) << getAnimal() << endl;
     cout << "------------------------------------" << endl;
     cout << "ID"                   << setw(30) << FarmAnimal::getId() << endl;

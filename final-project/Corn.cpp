@@ -4,51 +4,49 @@
 
 #include "Corn.h"
 #include <iomanip>
+#include <math.h>
 
-Corn::Corn(double acres,
-           
-           const string &type,
+Corn::Corn(const string &type,
            double cost,
-           double revenue   ):
-Crop(type, cost, revenue)
+           double revenue,
+           double acres     ):
+Crop(type, cost, revenue, acres)
 {
-    setSquareAcres(acres);
+    
 }
 
-Corn& Corn::setSquareAcres(double acres)
+double Corn::getBushelsPerAcre() const
 {
-    // avg farm in US is 444 sq acres
-    // largest in world is 22.5 million (China)
-    squareAcres = (acres >= 0.0 && acres <= 1000.0) ? acres : 0.0;
-    return *this;
+    return BUSHELS_PER_ACRE;
 }
 
-double Corn::getSquareAcres() const
+double Corn::calcTotalBushels() const
 {
-    return squareAcres;
+    return floor ( Crop::getTotalUnits() * getBushelsPerAcre() );
 }
 
-double Corn::calcCostTotal() const
+double Corn::calcRevenue() const
 {
-    return Crop::getCostPerUnit() * getSquareAcres();
+    return Crop::getRevenuePerUnit() * calcTotalBushels();
 }
 
-double Corn::calcRevenueTotal() const
+double Corn::calcCost() const
 {
-    return Crop::getRevenuePerUnit() * getSquareAcres();
+    return Crop::getCostPerUnit() * calcTotalBushels();
 }
 
-double Corn::calcProfitTotal() const
+double Corn::calcProfit() const
 {
-    return Crop::calcProfitPerUnit() * getSquareAcres();
+    return calcRevenue() - calcCost();
 }
 
 void Corn::display() const
 {
     Crop::display();
     cout << endl;
-    cout << "Square  acres: " << setw(11) << getSquareAcres()   << endl;
-    cout << "Revenue total: " << setw(11) << calcRevenueTotal() << endl;
-    cout << "Cost    total: " << setw(11) << calcCostTotal()    << endl;
-    cout << "Profit  total: " << setw(11) << calcProfitTotal()  << endl;
+    cout << "Square  acres: " << setw(11) << Crop::getTotalUnits()   << endl;
+    cout << "Total bushels: " << setw(11) << calcTotalBushels()   << endl;
+    cout << "Revenue total: " << setw(11) << calcRevenue() << endl;
+    cout << "Cost    total: " << setw(11) << calcCost()    << endl;
+    cout << "Profit  total: " << setw(11) << calcProfit()  << endl;
 }

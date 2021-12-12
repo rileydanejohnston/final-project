@@ -12,20 +12,22 @@ using namespace std;
 class Corn : public Crop {
     
 private:
-    double squareAcres;
+    // corn will be sold in bushels
+    // 1 acre = ~174.8 bushels
+    const double BUSHELS_PER_ACRE = 174.8;
+    
 public:
-    Corn(double  = 0.0,
-         
-         const string& = "Corn",
+    Corn(const string& = "Corn",
+         double = 0.0,
          double = 0.0,
          double = 0.0       );
     
-    Corn& setSquareAcres(double);
-    double getSquareAcres() const;
+    double getBushelsPerAcre() const;
+    double calcTotalBushels() const;
     
-    double calcCostTotal() const;
-    double calcRevenueTotal() const;
-    double calcProfitTotal() const;
+    double calcCost() const;
+    double calcRevenue() const;
+    double calcProfit() const;
     
     // virtual void produce(int = 1);
     virtual void display() const;

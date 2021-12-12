@@ -15,8 +15,10 @@ private:
     string cropType;
     double costPerUnit;
     double revenuePerUnit;
+    double totalUnits;
 public:
     Crop(const string& = "Corn",
+         double = 0.0,
          double = 0.0,
          double = 0.0       );
     
@@ -24,13 +26,18 @@ public:
     Crop& setCostPerUnit(double);
     Crop& setRevenuePerUnit(double);
     
+    // lbs for trees, acres for corn
+    Crop& setTotalUnits(double);
+    
     string getCropType() const;
     double getCostPerUnit() const;
     double getRevenuePerUnit() const;
+    double getTotalUnits() const;
     
-    double calcProfitPerUnit() const;
+    virtual double calcRevenue() const;
+    virtual double calcCost() const;
+    virtual double calcProfit() const;
     
-    // virtual void produce(int = 1) = 0;
     virtual void display() const;
     
 };

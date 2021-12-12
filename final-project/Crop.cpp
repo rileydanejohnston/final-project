@@ -7,11 +7,13 @@
 
 Crop::Crop(const string &type,
            double cost,
-           double revenue       )
+           double revenue,
+           double units     )
 {
     setCropType(type).
     setCostPerUnit(cost).
-    setRevenuePerUnit(revenue);
+    setRevenuePerUnit(revenue).
+    setTotalUnits(units);
 }
 
 Crop& Crop::setCropType(const string &type)
@@ -34,6 +36,12 @@ Crop& Crop::setRevenuePerUnit(double revenue)
     return *this;
 }
 
+Crop& Crop::setTotalUnits(double units)
+{
+    totalUnits = (units >= 0 && units <= 5000.00) ? units : 0.0;
+    return *this;
+}
+
 string Crop::getCropType() const
 {
     return cropType;
@@ -49,9 +57,24 @@ double Crop::getRevenuePerUnit() const
     return revenuePerUnit;
 }
 
-double Crop::calcProfitPerUnit() const
+double Crop::getTotalUnits() const
 {
-    return getRevenuePerUnit() - getCostPerUnit();
+    return totalUnits;
+}
+
+double Crop::calcRevenue() const
+{
+    return getTotalUnits() * getRevenuePerUnit();
+}
+
+double Crop::calcCost() const
+{
+    return getTotalUnits() * getCostPerUnit();
+}
+
+double Crop::calcProfit() const
+{
+    return calcRevenue() - calcCost();
 }
 
 void Crop::display() const
@@ -59,5 +82,4 @@ void Crop::display() const
     cout << "Crop Type: "      << setw(15) <<  getCropType()       << endl;
     cout << "Revenue (unit): " << setw(10) <<  getRevenuePerUnit() << endl;
     cout << "Cost    (unit): " << setw(10) <<  getCostPerUnit()    << endl;
-    cout << "Profit  (unit): " << setw(10) <<  calcProfitPerUnit() << endl;
 }

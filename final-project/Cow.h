@@ -13,10 +13,14 @@ using namespace std;
 class Cow : public FarmAnimal {
     
 private:
-    double totalGallons;
-    const string animal = "Cow";
+    // apparently milk is sold by the lb
+    // 8.6 lbs = 1 gallon
+    double lbsPerSaleUnit;
+    const double LBS_PER_GALLON = 8.6;
+    const string ANIMAL = "Cow";
 public:
     Cow(double = 0.0,
+        
         const string& = "ID-1",
         double = 0.0,
         double = 0.0,
@@ -25,10 +29,15 @@ public:
         double = 0.0        );
     virtual ~Cow() = default;       // marking virtual for clarity
     
-    Cow& setTotalGallons(double);
+    Cow& setLbsPerSaleUnit(double);
     
-    double getTotalGallons() const;
     string getAnimal() const;
+    double getLbsPerSaleUnit() const;
+    double getLbsPerGallon() const;
+    double getYearProduction() const;
+    
+    double calcTotalLbs() const;
+    int calcTotalSaleUnits() const;
     
     virtual double calcRevenue() const;
     virtual double calcCost() const;

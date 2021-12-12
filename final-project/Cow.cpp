@@ -5,8 +5,9 @@
 
 #include "Cow.h"
 #include <iomanip>
+#include <math.h>
 
-Cow::Cow(double totalGal,
+Cow::Cow(double lbsSaleUnit,
          const string &identity,
          double years,
          double lbs,
@@ -15,32 +16,53 @@ Cow::Cow(double totalGal,
          double numPerDay       )
 :FarmAnimal(identity, years, lbs, cost, revenue, numPerDay)
 {
-    setTotalGallons(totalGal);
+    setLbsPerSaleUnit(lbsSaleUnit);
 }
 
-Cow& Cow::setTotalGallons(double totalGal){
-    totalGallons = (totalGal >= 0.0 && totalGal <= 15000.0) ? totalGal : 0.0;
-    return *this;
-}
-
-double Cow::getTotalGallons() const
+Cow& Cow::setLbsPerSaleUnit(double lbsSaleUnit)
 {
-    return totalGallons;
+    lbsPerSaleUnit = (lbsSaleUnit >= 0.0 && lbsSaleUnit <= 250.0) ? lbsSaleUnit : 1.0;
+    return *this;
 }
 
 string Cow::getAnimal() const
 {
-    return animal;
+    return ANIMAL;
+}
+
+double Cow::getLbsPerSaleUnit() const
+{
+    return lbsPerSaleUnit;
+}
+
+double Cow::getLbsPerGallon() const
+{
+    return LBS_PER_GALLON;
+}
+
+double Cow::getYearProduction() const
+{
+    return FarmAnimal::calcYearProduction();
+}
+
+double Cow::calcTotalLbs() const
+{
+    return getYearProduction() * getLbsPerGallon();
+}
+
+int Cow::calcTotalSaleUnits() const
+{
+    return floor ( calcTotalLbs() / getLbsPerSaleUnit() );
 }
 
 double Cow::calcRevenue() const
 {
-    return FarmAnimal::calcRevenue() +  (getTotalGallons() * FarmAnimal::getRevenuePerUnit());
+    return calcTotalSaleUnits() * FarmAnimal::getRevenuePerUnit();
 }
 
 double Cow::calcCost() const
 {
-    return FarmAnimal::calcCost() +  (getTotalGallons() * FarmAnimal::getCostPerUnit());
+    return calcTotalSaleUnits() * FarmAnimal::getCostPerUnit();
 }
 
 double Cow::calcProfit() const
@@ -52,7 +74,6 @@ void Cow::display() const {
     cout << getAnimal() << endl;
     FarmAnimal::display();
     cout      <<
-    setw(10)  << getTotalGallons() << "\t" <<
     setw(11)  << calcRevenue() << "\t" <<
     setw(10)  << calcCost() << "\t" <<
     setw(10)  << calcProfit() << "\t" << endl;

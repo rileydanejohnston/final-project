@@ -23,7 +23,7 @@ int main() {
     int rating = 0, maxRating = 0;
     // animal variables
     string animal;
-    double avgGal= 0.0, totalGal = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
+    double avgGal= 0.0, cowLbsSaleUnit = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
     int eggsPerDay = 0, eggsPerUnit = 0, totalEggs = 0, removeItem = 0;
     // crop variables
     double lbsUnit, lbsApple, acres;
@@ -137,17 +137,17 @@ int main() {
                     cin >> avgGal;
                     
                     // automatically start at zero?
-                    cout << "Total gallons: ";
-                    cin >> totalGal;
+                    cout << "Pounds per sale unit (ex. milk sold in 100 lb units): ";
+                    cin >> cowLbsSaleUnit;
                     
-                    cout << "Cost per unit?: ";
+                    cout << "Cost per sale unit?: ";
                     cin >> cost;
                     
-                    cout << "Revenue per unit?: ";
+                    cout << "Revenue per sale unit?: ";
                     cin >> revenue;
                     cin.ignore();
                     
-                    Cow *newCow = new Cow(totalGal, animal, years, lbs, cost, revenue, avgGal);
+                    Cow *newCow = new Cow(cowLbsSaleUnit, animal, years, lbs, cost, revenue, avgGal);
                     
                     // passing what newCow is pointing at..
                     farm.addAnimal(*newCow);

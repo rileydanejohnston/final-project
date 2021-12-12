@@ -20,7 +20,7 @@ double Corn::getBushelsPerAcre() const
     return BUSHELS_PER_ACRE;
 }
 
-double Corn::calcTotalBushels() const
+int Corn::calcTotalBushels() const
 {
     return floor ( Crop::getTotalUnits() * getBushelsPerAcre() );
 }

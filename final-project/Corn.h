@@ -23,7 +23,7 @@ public:
          double = 0.0       );
     
     double getBushelsPerAcre() const;
-    double calcTotalBushels() const;
+    int calcTotalBushels() const;
     
     double calcCost() const;
     double calcRevenue() const;

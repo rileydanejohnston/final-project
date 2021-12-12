@@ -7,28 +7,20 @@
 #include <iomanip>
 
 AppleTree::AppleTree(double lbsUnit,
-                     double lbsAppl,
                                 
                      const string &type,
                      double cost,
-                     double revenue   ):
-Crop(type, cost, revenue)
+                     double revenue,
+                     double units        ):
+Crop(type, cost, revenue, units)
 {
-    setLbsPerUnit(lbsUnit).
-    setLbsApples(lbsAppl);
+    setLbsPerUnit(lbsUnit);
 }
 
 AppleTree& AppleTree::setLbsPerUnit(double lbsUnit)
 {
-    // validate? 50 is arbitrary
-    lbsPerUnit = (lbsUnit >= 0 && lbsUnit <= 25) ? lbsUnit : 0;
-    return *this;
-}
-
-AppleTree& AppleTree::setLbsApples(double lbsAppl)
-{
-    // validate? 5000 is arbitrary
-    lbsApples = (lbsAppl >= 0 && lbsAppl <= 1000) ? lbsAppl : 0;
+    // validate? 250 is arbitrary
+    lbsPerUnit = (lbsUnit >= 0 && lbsUnit <= 250) ? lbsUnit : 0;
     return *this;
 }
 
@@ -37,39 +29,34 @@ double AppleTree::getLbsPerUnit() const
     return lbsPerUnit;
 }
 
-double AppleTree::getLbsApples() const
-{
-    return lbsApples;
-}
-
 int AppleTree::calcUnits() const
 {
     // probably could truncate and get the right answer
     // better practice is floor
-    return floor(getLbsApples() / getLbsPerUnit());
+    return floor(Crop::getTotalUnits() / getLbsPerUnit());
 }
 
-double AppleTree::calcCostTotal() const
+double AppleTree::calcCost() const
 {
     return calcUnits() * Crop::getCostPerUnit();
 }
 
-double AppleTree::calcRevenueTotal() const
+double AppleTree::calcRevenue() const
 {
     return calcUnits() * Crop::getRevenuePerUnit();
 }
 
-double AppleTree::calcProfitTotal() const
+double AppleTree::calcProfit() const
 {
-    return calcUnits() * Crop::calcProfitPerUnit();
+    return calcRevenue() - calcCost();
 }
 
 void AppleTree::display() const
 {
     Crop::display();
-    cout << "Apples    (lbs): " << setw(10) <<  getLbsApples()     << endl;
-    cout << "Apples  (units): " << setw(10) <<  getLbsPerUnit()    << endl;
-    cout << "Revenue (total): " << setw(10) <<  calcRevenueTotal() << endl;
-    cout << "Cost    (total): " << setw(10) <<  calcCostTotal()    << endl;
-    cout << "Profit  (total): " << setw(10) <<  calcProfitTotal()  << endl;
+    cout << "Apples    (lbs): " << setw(10) <<  Crop::getTotalUnits()     << endl;
+    cout << "Apples  (units): " << setw(10) <<  calcUnits()    << endl;
+    cout << "Revenue (total): " << setw(10) <<  calcRevenue() << endl;
+    cout << "Cost    (total): " << setw(10) <<  calcCost()    << endl;
+    cout << "Profit  (total): " << setw(10) <<  calcProfit()  << endl;
 }

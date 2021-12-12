@@ -187,7 +187,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    AppleTree *newTree = new AppleTree(lbsUnit, lbsApple, type, cost, revenue);
+                    AppleTree *newTree = new AppleTree(lbsUnit, type, cost, revenue, lbsApple);
                     
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newTree);
@@ -208,7 +208,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    Corn *newCorn = new Corn(acres, type, cost, revenue);
+                    Corn *newCorn = new Corn(type, cost, revenue, acres);
                     
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newCorn);

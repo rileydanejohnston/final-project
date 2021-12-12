@@ -13,25 +13,22 @@ class AppleTree : public Crop {
     
 private:
     double lbsPerUnit;
-    double lbsApples;
 public:
     AppleTree(double = 0.0,
-              double  = 0.0,
               
               const string& = "Corn",
+              double  = 0.0,
               double = 0.0,
               double = 0.0  );
     
     AppleTree& setLbsPerUnit(double);
-    AppleTree& setLbsApples(double);
     
     double getLbsPerUnit() const;
-    double getLbsApples() const;
-    
     int calcUnits() const;
-    double calcCostTotal() const;
-    double calcRevenueTotal() const;
-    double calcProfitTotal() const;
+    
+    virtual double calcCost() const;
+    virtual double calcRevenue() const;
+    virtual double calcProfit() const;
     
     virtual void display() const;
 };

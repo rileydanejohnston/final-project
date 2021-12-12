@@ -3,6 +3,7 @@
 // Final project
 
 #include "Farm.h"
+#include <iomanip>
 
 Farm::Farm(const Farmer &farmer):
 headFarmer(farmer)
@@ -203,11 +204,38 @@ void Farm::produce()
     setAnimalRevenue( revSum );
     setAnimalCost( costSum );
     
-    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
-    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
+    updateFarmTotals();
     
     cout << "Animal revenue: " << getAnimalRevenue() << endl;
     cout << "Animal cost: " << getAnimalCost() << endl;
     cout << "Total revenue: " << getTotalRevenue() << endl;
     cout << "Total cost: " << getTotalCost() << endl;
+}
+
+void Farm::harvest()
+{
+    double revSum = 0.0;
+    double costSum = 0.0;
+    
+    for (int i = 0; i < getCropSize(); ++i)
+    {
+        revSum += crops[i]->calcRevenue();
+        costSum += crops[i]->calcCost();
+    }
+    
+    setCropRevenue( revSum );
+    setCropCost( costSum );
+    
+    updateFarmTotals();
+    
+    cout << fixed << setprecision(2) << "Crop revenue: " << getCropRevenue() << endl;
+    cout << "Crop cost: " << getCropCost() << endl;
+    cout << "Total revenue: " << getTotalRevenue() << endl;
+    cout << "Total cost: " << getTotalCost() << endl;
+}
+
+void Farm::updateFarmTotals()
+{
+    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
+    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
 }

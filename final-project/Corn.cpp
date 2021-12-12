@@ -22,6 +22,7 @@ double Corn::getBushelsPerAcre() const
 
 int Corn::calcTotalBushels() const
 {
+    cout << "Total bushels: " << floor ( Crop::getTotalUnits() * getBushelsPerAcre() ) << endl;
     return floor ( Crop::getTotalUnits() * getBushelsPerAcre() );
 }
 

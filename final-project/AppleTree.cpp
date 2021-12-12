@@ -33,6 +33,7 @@ int AppleTree::calcUnits() const
 {
     // probably could truncate and get the right answer
     // better practice is floor
+    cout << "total apple units: " << floor(Crop::getTotalUnits() / getLbsPerUnit()) << endl;
     return floor(Crop::getTotalUnits() / getLbsPerUnit());
 }
 

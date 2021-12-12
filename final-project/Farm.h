@@ -80,6 +80,8 @@ public:
     void displayCrops() const;
     
     void produce();
+    void harvest();
+    void updateFarmTotals();
     
     // return bool?
     template <typename T>

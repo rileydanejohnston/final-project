@@ -71,6 +71,7 @@ int main() {
         cout << "7) Produce - animals" << endl;
         cout << "8) Harvest - crops" << endl;
         
+        cout << "9) Show farmer info" << endl;
         cout << "7) Display farm" << endl;
         cout << "8) Save farm to file" << endl;
         cout << "q) Quit" << endl << endl;
@@ -281,6 +282,10 @@ int main() {
         else if (selection == '8')
         {
             farm.harvest();
+        }
+        else if (selection == '9')
+        {
+            farm.displayFarmer();
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

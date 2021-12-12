@@ -207,6 +207,11 @@ void Farm::displayCrops() const
     }
 }
 
+void Farm::displayFarmer() const
+{
+    headFarmer.display();
+}
+
 void Farm::produce()
 {
     double revSum = 0.0;

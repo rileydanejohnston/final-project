@@ -32,6 +32,8 @@ private:
     double cropCost;
     double totalRevenue;
     double totalCost;
+    
+    void updateFarmTotals();
 public:
     // initialize with a farmer
     Farm(const Farmer& = Farmer());
@@ -39,8 +41,8 @@ public:
     ~Farm();
     
     // template? add 1 crop or the other?
-    bool addFarmer(const Farmer&);
-    bool removeFarmer(int) const;
+    // bool addFarmer(const Farmer&);
+    // bool removeFarmer(int) const;
     
     Farm& setAnimalRevenue(double);
     Farm& setAnimalCost(double);
@@ -79,10 +81,11 @@ public:
     
     void displayAnimals() const;
     void displayCrops() const;
+    void displayFarmer() const;
     
     void produce();
     void harvest();
-    void updateFarmTotals();
+    
     
     // return bool?
     template <typename T>

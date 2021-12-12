@@ -16,6 +16,9 @@
 using namespace std;
 
 int main() {
+    Cow doggie(100, "Dog-1", 15, 15, 3, 5, 18);
+    
+    doggie.display();
     
     // farmer variables
     string name, bday, town, focus;

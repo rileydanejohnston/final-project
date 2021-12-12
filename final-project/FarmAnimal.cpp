@@ -107,7 +107,10 @@ double FarmAnimal::calcProfit() const
 }
 
 void FarmAnimal::display() const {
-    cout     << getId() << "\t" <<
-    setw(11)  << getAge() << "\t" <<
-    setw(10)  << getWeight() << "\t";
+    cout << "ID: "                  << setw(30) << getId() << endl;
+    cout << "Age: "                 << setw(29) << getAge() << endl;
+    cout << "Weight (lbs): "        << setw(20) << getWeight() << endl;
+    cout << "Revenue (sale unit): " << setw(13) << getRevenuePerUnit() << endl;
+    cout << "Cost (sale unit): "    << setw(16) << getCostPerUnit() << endl;
+    cout << "Units per day: "       << setw(19) << getAveragePerDay() << endl;
 }

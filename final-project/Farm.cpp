@@ -16,12 +16,27 @@ headFarmer(farmer)
     setTotalCost(0.0);
 }
 
-/*
-Farm::Farm(const Farm &farmToCopy)
+Farm::Farm(const Farm &farmToCopy):
+headFarmer( farmToCopy.getHeadFarmerInst() )
 {
+    setAnimalRevenue( farmToCopy.getAnimalRevenue() ).
+    setAnimalCost( farmToCopy.getAnimalCost() ).
+    setCropRevenue( farmToCopy.getCropRevenue() ).
+    setCropCost( farmToCopy.getCropCost() ).
+    setTotalRevenue( farmToCopy.getTotalRevenue() ).
+    setTotalCost(  farmToCopy.getTotalCost() );
     
+    for (int i = 0; i < getAnimalSize(); ++i)
+    {
+        animals[i] = farmToCopy.animals[i];
+    }
+    
+    for (int i = 0; i < getCropSize(); ++i)
+    {
+        crops[i] = farmToCopy.crops[i];
+    }
 }
-*/
+
 
 Farm::~Farm()
 {
@@ -38,37 +53,37 @@ Farm::~Farm()
 
 Farm& Farm::setAnimalRevenue(double rev)
 {
-    animalRevenue = rev;
+    animalRevenue = (rev >= 0) ? rev : 0.0;
     return *this;
 }
 
 Farm& Farm::setAnimalCost(double cst)
 {
-    animalCost = cst;
+    animalCost = (cst >= 0) ? cst : 0.0;
     return *this;
 }
 
 Farm& Farm::setCropRevenue(double rev)
 {
-    cropRevenue = rev;
+    cropRevenue = (rev >= 0) ? rev : 0.0;
     return *this;
 }
 
 Farm& Farm::setCropCost(double cst)
 {
-    cropCost = cst;
+    cropCost = (cst >= 0) ? cst : 0.0;
     return *this;
 }
 
 Farm& Farm::setTotalRevenue(double rev)
 {
-    totalRevenue = rev;
+    totalRevenue = (rev >= 0) ? rev : 0.0;
     return *this;
 }
 
 Farm& Farm::setTotalCost(double cst)
 {
-    totalCost = cst;
+    totalCost = (cst >= 0) ? cst : 0.0;
     return *this;
 }
 
@@ -100,6 +115,11 @@ double Farm::getTotalRevenue() const
 double Farm::getTotalCost() const
 {
     return totalCost;
+}
+            
+Farmer Farm::getHeadFarmerInst() const
+{
+    return headFarmer;
 }
 
 double Farm::calcAnimalProfit() const

@@ -55,6 +55,7 @@ public:
     double getCropCost() const;
     double getTotalRevenue() const;
     double getTotalCost() const;
+    Farmer getHeadFarmerInst() const;
     
     double calcAnimalProfit() const;
     double calcCropProfit() const;

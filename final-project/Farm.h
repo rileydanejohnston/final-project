@@ -26,8 +26,12 @@ private:
     // vector<Farmers*> farmers;
     vector<const Crop*> crops;
    
-    double revenue;
-    double cost;
+    double animalRevenue;
+    double animalCost;
+    double cropRevenue;
+    double cropCost;
+    double totalRevenue;
+    double totalCost;
 public:
     // initialize with a farmer
     Farm(const Farmer& = Farmer());
@@ -38,12 +42,23 @@ public:
     bool addFarmer(const Farmer&);
     bool removeFarmer(int) const;
     
-    Farm& setRevenue(double);
-    Farm& setCost(double);
+    Farm& setAnimalRevenue(double);
+    Farm& setAnimalCost(double);
+    Farm& setCropRevenue(double);
+    Farm& setCropCost(double);
+    Farm& setTotalRevenue(double);
+    Farm& setTotalCost(double);
     
-    double getRevenue() const;
-    double getCost() const;
-    double calcProfit() const;
+    double getAnimalRevenue() const;
+    double getAnimalCost() const;
+    double getCropRevenue() const;
+    double getCropCost() const;
+    double getTotalRevenue() const;
+    double getTotalCost() const;
+    
+    double calcAnimalProfit() const;
+    double calcCropProfit() const;
+    double calcTotalProfit() const;
     
     bool removeAnimal(int);
     bool removeCrop(int);
@@ -63,6 +78,8 @@ public:
     
     void displayAnimals() const;
     void displayCrops() const;
+    
+    void produce();
     
     // return bool?
     template <typename T>

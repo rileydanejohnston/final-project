@@ -43,6 +43,8 @@ int Chicken::calcUnits() const {
     // integer division will truncate the result.
     // I'm still using floor because I think it's good practice
     int eggSum = FarmAnimal::calcYearProduction() + getTotalEggs();
+    // cout << "egg sum: " << eggSum << endl;
+    // cout << "egg units: " << floor(eggSum / getEggsPerUnit()) << endl;
     return floor(eggSum / getEggsPerUnit());
 }
 

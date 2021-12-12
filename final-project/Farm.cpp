@@ -7,8 +7,12 @@
 Farm::Farm(const Farmer &farmer):
 headFarmer(farmer)
 {
-    setRevenue(0.0).
-    setCost(0.0);
+    setAnimalRevenue(0.0).
+    setAnimalCost(0.0).
+    setCropRevenue(0.0).
+    setCropCost(0.0).
+    setTotalRevenue(0.0).
+    setTotalCost(0.0);
 }
 
 /*
@@ -31,31 +35,85 @@ Farm::~Farm()
     }
 }
 
-Farm& Farm::setRevenue(double rev)
+Farm& Farm::setAnimalRevenue(double rev)
 {
-    revenue = rev;
+    animalRevenue = rev;
     return *this;
 }
 
-Farm& Farm::setCost(double cst)
+Farm& Farm::setAnimalCost(double cst)
 {
-    cost = cst;
+    animalCost = cst;
     return *this;
 }
 
-double Farm::getRevenue() const
+Farm& Farm::setCropRevenue(double rev)
 {
-    return revenue;
+    cropRevenue = rev;
+    return *this;
 }
 
-double Farm::getCost() const
+Farm& Farm::setCropCost(double cst)
 {
-    return cost;
+    cropCost = cst;
+    return *this;
 }
 
-double Farm::calcProfit() const
+Farm& Farm::setTotalRevenue(double rev)
 {
-    return getRevenue() - getCost();
+    totalRevenue = rev;
+    return *this;
+}
+
+Farm& Farm::setTotalCost(double cst)
+{
+    totalCost = cst;
+    return *this;
+}
+
+double Farm::getAnimalRevenue() const
+{
+    return animalRevenue;
+}
+
+double Farm::getAnimalCost() const
+{
+    return animalCost;
+}
+
+double Farm::getCropRevenue() const
+{
+    return cropRevenue;
+}
+
+double Farm::getCropCost() const
+{
+    return cropCost;
+}
+
+double Farm::getTotalRevenue() const
+{
+    return totalRevenue;
+}
+
+double Farm::getTotalCost() const
+{
+    return totalCost;
+}
+
+double Farm::calcAnimalProfit() const
+{
+    return getAnimalRevenue() - getAnimalCost();
+}
+
+double Farm::calcCropProfit() const
+{
+    return getCropRevenue() - getCropCost();
+}
+
+double Farm::calcTotalProfit() const
+{
+    return getTotalRevenue() - getTotalCost();
 }
 
 bool Farm::removeAnimal(int index)
@@ -126,4 +184,30 @@ void Farm::displayCrops() const
     {
         crops[i]->display();
     }
+}
+
+void Farm::produce()
+{
+    double revSum = 0.0;
+    double costSum = 0.0;
+    
+    for (int i = 0; i < getAnimalSize(); ++i)
+    {
+        revSum += animals[i]->calcRevenue();
+        costSum += animals[i]->calcCost();
+    }
+    
+    // setAnimalRevenue( revSum + getAnimalRevenue() );
+    // setAnimalCost( costSum + getAnimalCost() );
+    
+    setAnimalRevenue( revSum );
+    setAnimalCost( costSum );
+    
+    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
+    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
+    
+    cout << "Animal revenue: " << getAnimalRevenue() << endl;
+    cout << "Animal cost: " << getAnimalCost() << endl;
+    cout << "Total revenue: " << getTotalRevenue() << endl;
+    cout << "Total cost: " << getTotalCost() << endl;
 }

@@ -28,9 +28,6 @@ int main() {
     // crop variables
     double lbsUnit, lbsApple, acres;
     string type;
-    // produce variables
-    int days = 0;
-    double revenueSum = 0.0, costSum = 0.0;
     
     cout << "Name: ";
     getline(cin, name);
@@ -282,15 +279,8 @@ int main() {
         }
         else if (selection == '7')
         {
-            // call produce on all animals - creates revenue/cost
-            // pull revenue into farm class
-            
-            // validate this?
-            // the 
-            cout << "Days (for cows and chickens to produce): ";
-            cin >> days;
-            
-            //farm.produce(days);
+            cout << "Projection for 365 days:" << endl;
+            farm.produce();
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

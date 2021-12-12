@@ -12,7 +12,7 @@ using namespace std;
 class FarmAnimal {
     
 private:
-    string animal;
+    string id;
     double age;
     double weight;
     double costPerUnit;
@@ -20,7 +20,7 @@ private:
     double averagePerDay;
     
 public:
-    FarmAnimal(const string& = "Cow",
+    FarmAnimal(const string& = "ID-1",
                double = 0.0,
                double = 0.0,
                double = 0.0,
@@ -28,14 +28,14 @@ public:
                double = 0.0         );
     virtual ~FarmAnimal() = default;
     
-    FarmAnimal& setFarmAnimal(const string&);
+    FarmAnimal& setId(const string&);
     FarmAnimal& setAge(double);
     FarmAnimal& setWeight(double);
     FarmAnimal& setCostPerUnit(double);
     FarmAnimal& setRevenuePerUnit(double);
     FarmAnimal& setAveragePerDay(double);
     
-    string getFarmAnimal() const;
+    string getId() const;
     double getAge() const;
     double getWeight() const;
     double getCostPerUnit() const;

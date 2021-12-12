@@ -159,7 +159,7 @@ void Farm::deleteAnimalList() const
 {
     for (int i = 0; i < getAnimalSize(); ++i)
     {
-        cout << i + 1 << ") " << animals[i]->getFarmAnimal() << endl;
+        cout << i + 1 << ") " << animals[i]->getId() << endl;
     }
 }
 

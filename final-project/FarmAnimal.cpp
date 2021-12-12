@@ -5,14 +5,14 @@
 #include "FarmAnimal.h"
 #include <iomanip>
 
-FarmAnimal::FarmAnimal(const string &anml,
+FarmAnimal::FarmAnimal(const string &identity,
                double years,
                double lbs,
                double cost,
                double revenue,
                double numPerDay     )
 {
-    setFarmAnimal(anml).
+    setId(identity).
     setAge(years).
     setWeight(lbs).
     setCostPerUnit(cost).
@@ -20,9 +20,9 @@ FarmAnimal::FarmAnimal(const string &anml,
     setAveragePerDay(numPerDay);
 }
 
-FarmAnimal& FarmAnimal::setFarmAnimal(const string &anml)
+FarmAnimal& FarmAnimal::setId(const string &identity)
 {
-    animal = anml;
+    id = identity;
     return *this;
 }
 
@@ -56,9 +56,9 @@ FarmAnimal& FarmAnimal::setAveragePerDay(double numPerDay)
     return *this;
 }
 
-string FarmAnimal::getFarmAnimal() const
+string FarmAnimal::getId() const
 {
-    return animal;
+    return id;
 }
 
 double FarmAnimal::getAge() const
@@ -107,7 +107,7 @@ double FarmAnimal::calcProfit() const
 }
 
 void FarmAnimal::display() const {
-    cout     << getFarmAnimal() << "\t" <<
+    cout     << getId() << "\t" <<
     setw(11)  << getAge() << "\t" <<
     setw(10)  << getWeight() << "\t";
 }

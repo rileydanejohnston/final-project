@@ -15,14 +15,15 @@ private:
     // corn will be sold in bushels
     // 1 acre = ~174.8 bushels
     const double BUSHELS_PER_ACRE = 174.8;
-    
+    const string cropType = "Corn";
 public:
-    Corn(const string& = "Corn",
+    Corn(const string& = "Field 1",
          double = 0.0,
          double = 0.0,
          double = 0.0       );
     
     double getBushelsPerAcre() const;
+    string getCropType() const;
     int calcTotalBushels() const;
     
     double calcCost() const;

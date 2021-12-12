@@ -8,11 +8,11 @@
 
 AppleTree::AppleTree(double lbsUnit,
                                 
-                     const string &type,
+                     const string &identity,
                      double cost,
                      double revenue,
                      double units        ):
-Crop(type, cost, revenue, units)
+Crop(identity, cost, revenue, units)
 {
     setLbsPerUnit(lbsUnit);
 }
@@ -27,6 +27,11 @@ AppleTree& AppleTree::setLbsPerUnit(double lbsUnit)
 double AppleTree::getLbsPerUnit() const
 {
     return lbsPerUnit;
+}
+
+string AppleTree::getCropType() const
+{
+    return cropType;
 }
 
 int AppleTree::calcUnits() const
@@ -54,6 +59,7 @@ double AppleTree::calcProfit() const
 
 void AppleTree::display() const
 {
+    cout << getCropType() << endl;
     Crop::display();
     cout << "Apples    (lbs): " << setw(10) <<  Crop::getTotalUnits()     << endl;
     cout << "Apples  (units): " << setw(10) <<  calcUnits()    << endl;

@@ -12,24 +12,24 @@ using namespace std;
 class Crop {
     
 private:
-    string cropType;
+    string cropId;
     double costPerUnit;
     double revenuePerUnit;
     double totalUnits;
 public:
-    Crop(const string& = "Corn",
+    Crop(const string& = "ID-1",
          double = 0.0,
          double = 0.0,
          double = 0.0       );
     
-    Crop& setCropType(const string&);
+    Crop& setCropId(const string&);
     Crop& setCostPerUnit(double);
     Crop& setRevenuePerUnit(double);
     
     // lbs for trees, acres for corn
     Crop& setTotalUnits(double);
     
-    string getCropType() const;
+    string getCropId() const;
     double getCostPerUnit() const;
     double getRevenuePerUnit() const;
     double getTotalUnits() const;

@@ -5,20 +5,20 @@
 #include "Crop.h"
 #include <iomanip>
 
-Crop::Crop(const string &type,
+Crop::Crop(const string &identity,
            double cost,
            double revenue,
            double units     )
 {
-    setCropType(type).
+    setCropId(identity).
     setCostPerUnit(cost).
     setRevenuePerUnit(revenue).
     setTotalUnits(units);
 }
 
-Crop& Crop::setCropType(const string &type)
+Crop& Crop::setCropId(const string &identity)
 {
-    cropType = type;
+    cropId = identity;
     return *this;
 }
 
@@ -42,9 +42,9 @@ Crop& Crop::setTotalUnits(double units)
     return *this;
 }
 
-string Crop::getCropType() const
+string Crop::getCropId() const
 {
-    return cropType;
+    return cropId;
 }
 
 double Crop::getCostPerUnit() const
@@ -79,7 +79,7 @@ double Crop::calcProfit() const
 
 void Crop::display() const
 {
-    cout << "Crop Type: "      << setw(15) <<  getCropType()       << endl;
+    cout << "Crop Id: "      << setw(15) <<  getCropId()       << endl;
     cout << "Revenue (unit): " << setw(10) <<  getRevenuePerUnit() << endl;
     cout << "Cost    (unit): " << setw(10) <<  getCostPerUnit()    << endl;
 }

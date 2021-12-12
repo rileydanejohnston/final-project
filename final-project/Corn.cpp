@@ -20,6 +20,11 @@ double Corn::getBushelsPerAcre() const
     return BUSHELS_PER_ACRE;
 }
 
+string Corn::getCropType() const
+{
+    return cropType;
+}
+
 int Corn::calcTotalBushels() const
 {
     cout << "Total bushels: " << floor ( Crop::getTotalUnits() * getBushelsPerAcre() ) << endl;
@@ -43,6 +48,7 @@ double Corn::calcProfit() const
 
 void Corn::display() const
 {
+    cout << getCropType() << endl;
     Crop::display();
     cout << endl;
     cout << "Square  acres: " << setw(11) << Crop::getTotalUnits()   << endl;

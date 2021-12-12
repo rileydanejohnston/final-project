@@ -167,7 +167,7 @@ void Farm::deleteCropList() const
 {
     for (int i = 0; i < getCropSize(); ++i)
     {
-        cout << i + 1 << ") " << crops[i]->getCropType() << endl;
+        cout << i + 1 << ") " << crops[i]->getCropId() << endl;
     }
 }
 

@@ -13,10 +13,11 @@ class AppleTree : public Crop {
     
 private:
     double lbsPerUnit;
+    const string cropType = "Apple Tree";
 public:
     AppleTree(double = 0.0,
               
-              const string& = "Corn",
+              const string& = "ID-1",
               double  = 0.0,
               double = 0.0,
               double = 0.0  );
@@ -24,6 +25,7 @@ public:
     AppleTree& setLbsPerUnit(double);
     
     double getLbsPerUnit() const;
+    string getCropType() const;
     int calcUnits() const;
     
     virtual double calcCost() const;

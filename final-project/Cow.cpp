@@ -7,13 +7,13 @@
 #include <iomanip>
 
 Cow::Cow(double totalGal,
-         const string &anml,
+         const string &identity,
          double years,
          double lbs,
          double cost,
          double revenue,
          double numPerDay       )
-:FarmAnimal(anml, years, lbs, cost, revenue, numPerDay)
+:FarmAnimal(identity, years, lbs, cost, revenue, numPerDay)
 {
     setTotalGallons(totalGal);
 }
@@ -26,6 +26,11 @@ Cow& Cow::setTotalGallons(double totalGal){
 double Cow::getTotalGallons() const
 {
     return totalGallons;
+}
+
+string Cow::getAnimal() const
+{
+    return animal;
 }
 
 double Cow::calcRevenue() const
@@ -44,6 +49,7 @@ double Cow::calcProfit() const
 }
 
 void Cow::display() const {
+    cout << getAnimal() << endl;
     FarmAnimal::display();
     cout      <<
     setw(10)  << getTotalGallons() << "\t" <<

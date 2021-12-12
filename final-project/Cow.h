@@ -14,10 +14,10 @@ class Cow : public FarmAnimal {
     
 private:
     double totalGallons;
-    
+    const string animal = "Cow";
 public:
     Cow(double = 0.0,
-        const string& = "Cow",
+        const string& = "ID-1",
         double = 0.0,
         double = 0.0,
         double = 0.0,
@@ -28,6 +28,7 @@ public:
     Cow& setTotalGallons(double);
     
     double getTotalGallons() const;
+    string getAnimal() const;
     
     virtual double calcRevenue() const;
     virtual double calcCost() const;

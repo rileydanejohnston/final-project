@@ -8,7 +8,6 @@
 #include <math.h>
 
 Chicken::Chicken(int eggsUnit,
-                 int eggsSum,
                  const string &anml,
                  double years,
                  double lbs,
@@ -17,8 +16,7 @@ Chicken::Chicken(int eggsUnit,
                  double eggsDays)
 :FarmAnimal(anml, years, lbs, cost, revenue, eggsDays)
 {
-    setEggsPerUnit(eggsUnit).
-    setTotalEggs(eggsSum);
+    setEggsPerUnit(eggsUnit);
 }
 
 Chicken& Chicken::setEggsPerUnit(int eggsUnit){
@@ -26,17 +24,12 @@ Chicken& Chicken::setEggsPerUnit(int eggsUnit){
     return *this;
 }
 
-Chicken& Chicken::setTotalEggs(int eggsSum){
-    totalEggs = (eggsSum >= 0 && eggsSum <= 1000) ? eggsSum : 0;
-    return *this;
-}
-
 int Chicken::getEggsPerUnit() const {
     return eggsPerUnit;
 }
 
-int Chicken::getTotalEggs() const {
-    return totalEggs;
+int Chicken::getYearProduction() const {
+    return FarmAnimal::calcYearProduction();
 }
 
 string Chicken::getAnimal() const {
@@ -46,10 +39,9 @@ string Chicken::getAnimal() const {
 int Chicken::calcUnits() const {
     // integer division will truncate the result.
     // I'm still using floor because I think it's good practice
-    int eggSum = FarmAnimal::calcYearProduction() + getTotalEggs();
     // cout << "egg sum: " << eggSum << endl;
     // cout << "egg units: " << floor(eggSum / getEggsPerUnit()) << endl;
-    return floor(eggSum / getEggsPerUnit());
+    return floor(getYearProduction() / getEggsPerUnit());
 }
 
 double Chicken::calcRevenue() const
@@ -71,7 +63,6 @@ void Chicken::display() const {
     cout << getAnimal() << endl;
     FarmAnimal::display();
     cout      <<
-    setw(6)   << getTotalEggs() << "\t" <<
     setw(10)  << calcUnits() << "\t" <<
     setw(11)  << calcRevenue() << "\t" <<
     setw(10)  << calcCost() << "\t" <<

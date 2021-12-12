@@ -22,9 +22,9 @@ int main() {
     double experience = 0.0;
     int rating = 0, maxRating = 0;
     // animal variables
-    string animal;
+    string identity;
     double avgGal= 0.0, cowLbsSaleUnit = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
-    int eggsPerDay = 0, eggsPerUnit = 0, totalEggs = 0, removeItem = 0;
+    int eggsPerDay = 0, eggsPerUnit = 0, removeItem = 0;
     // crop variables
     double lbsUnit, lbsApple, acres;
     string type;
@@ -88,8 +88,8 @@ int main() {
                 
                 if (selection == '1'){
                     // automatically "Chicken" or give them a name?
-                    cout << "Animal/name: ";
-                    getline(cin, animal);
+                    cout << "Animal ID (name, number, etc): ";
+                    getline(cin, identity);
                     
                     cout << "Age: ";
                     cin >> years;
@@ -104,18 +104,14 @@ int main() {
                     cout << "Eggs per carton (ex 12, 18): ";
                     cin >> eggsPerUnit;
                     
-                    // automatically start at zero?
-                    cout << "Total eggs: ";
-                    cin >> totalEggs;
-                    
-                    cout << "Cost per unit?: ";
+                    cout << "Cost per carton?: ";
                     cin >> cost;
                     
-                    cout << "Revenue per unit?: ";
+                    cout << "Revenue per carton?: ";
                     cin >> revenue;
                     cin.ignore();
                     
-                    Chicken *newChicken = new Chicken(eggsPerUnit, totalEggs, animal, years, lbs, cost, revenue, eggsPerDay);
+                    Chicken *newChicken = new Chicken(eggsPerUnit, identity, years, lbs, cost, revenue, eggsPerDay);
                     
                     // passing what newChicken is pointing at..
                     farm.addAnimal(*newChicken);
@@ -124,8 +120,8 @@ int main() {
                 }
                 else if (selection == '2'){
                     // automatically add "Cow" or keep as name?
-                    cout << "Animal/name: ";
-                    getline(cin, animal);
+                    cout << "Animal ID (name, number, etc): ";
+                    getline(cin, identity);
                     
                     cout << "Age: ";
                     cin >> years;
@@ -136,7 +132,6 @@ int main() {
                     cout << "Gallons of milk (per day): ";
                     cin >> avgGal;
                     
-                    // automatically start at zero?
                     cout << "Pounds per sale unit (ex. milk sold in 100 lb units): ";
                     cin >> cowLbsSaleUnit;
                     
@@ -147,7 +142,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    Cow *newCow = new Cow(cowLbsSaleUnit, animal, years, lbs, cost, revenue, avgGal);
+                    Cow *newCow = new Cow(cowLbsSaleUnit, identity, years, lbs, cost, revenue, avgGal);
                     
                     // passing what newCow is pointing at..
                     farm.addAnimal(*newCow);
@@ -172,23 +167,23 @@ int main() {
                 cin.ignore();
                 
                 if (selection == '1'){
-                    cout << "Type (apple tree): ";
-                    getline(cin, type);
+                    cout << "Crop ID (ex tree1): ";
+                    getline(cin, identity);
                     
                     cout << "Tree yield (lbs of apples): ";
                     cin >> lbsApple;
                     
-                    cout << "Unit size (lbs per unit): ";
+                    cout << "Sale unit size (lbs per unit): ";
                     cin >> lbsUnit;
                     
-                    cout << "Cost per unit?: ";
+                    cout << "Cost per sale unit?: ";
                     cin >> cost;
                     
-                    cout << "Revenue per unit?: ";
+                    cout << "Revenue per sale unit?: ";
                     cin >> revenue;
                     cin.ignore();
                     
-                    AppleTree *newTree = new AppleTree(lbsUnit, type, cost, revenue, lbsApple);
+                    AppleTree *newTree = new AppleTree(lbsUnit, identity, cost, revenue, lbsApple);
                     
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newTree);
@@ -196,20 +191,20 @@ int main() {
                     cout << "Added one apple tree!" << endl;
                 }
                 else if (selection == '2'){
-                    cout << "Type (Corn): ";
-                    getline(cin, type);
+                    cout << "Crop ID (ex field1): ";
+                    getline(cin, identity);
                     
                     cout << "Square acres: ";
                     cin >> acres;
                     
-                    cout << "Cost per unit?: ";
+                    cout << "Cost per sale unit?: ";
                     cin >> cost;
                     
-                    cout << "Revenue per unit?: ";
+                    cout << "Revenue per sale unit?: ";
                     cin >> revenue;
                     cin.ignore();
                     
-                    Corn *newCorn = new Corn(type, cost, revenue, acres);
+                    Corn *newCorn = new Corn(identity, cost, revenue, acres);
                     
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newCorn);

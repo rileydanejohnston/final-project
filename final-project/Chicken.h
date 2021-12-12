@@ -18,7 +18,6 @@ private:
     const string animal = "Chicken";
 public:
     Chicken(int = 12,
-            int = 0,
             const string& = "ID-1",
             double = 0.0,
             double = 0.0,
@@ -28,10 +27,9 @@ public:
     virtual ~Chicken() = default;    // marking virtual for clarity
     
     Chicken& setEggsPerUnit(int);       // 12 eggs per dozen. You wouldn't sell a single egg
-    Chicken& setTotalEggs(int);
     
     int getEggsPerUnit() const;
-    int getTotalEggs() const;
+    int getYearProduction() const;
     string getAnimal() const;
     
     int calcUnits() const;

@@ -13,7 +13,7 @@ class AppleTree : public Crop {
     friend ostream& operator<<(ostream&, const AppleTree&);
 private:
     double lbsPerUnit;
-    const string cropType = "Apple Tree";
+    const string CROP_TYPE = "Apple Tree";
 public:
     AppleTree(double = 0.0,
               

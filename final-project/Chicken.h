@@ -15,7 +15,7 @@ class Chicken : public FarmAnimal {
 private:
     int eggsPerDay;
     int eggsPerUnit;
-    const string animal = "Chicken";
+    const string ANIMAL = "Chicken";
 public:
     Chicken(int = 12,
             const string& = "ID-1",

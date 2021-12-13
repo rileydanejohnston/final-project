@@ -53,7 +53,7 @@ int Chicken::getYearProduction() const {
 }
 
 string Chicken::getAnimal() const {
-    return animal;
+    return ANIMAL;
 }
 
 int Chicken::calcUnits() const {

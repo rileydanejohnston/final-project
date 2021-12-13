@@ -48,7 +48,7 @@ double AppleTree::getLbsPerUnit() const
 
 string AppleTree::getCropType() const
 {
-    return cropType;
+    return CROP_TYPE;
 }
 
 int AppleTree::calcUnits() const

@@ -39,7 +39,7 @@ double Corn::getBushelsPerAcre() const
 
 string Corn::getCropType() const
 {
-    return cropType;
+    return CROP_TYPE;
 }
 
 int Corn::calcTotalBushels() const

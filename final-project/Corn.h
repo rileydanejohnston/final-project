@@ -10,7 +10,7 @@
 using namespace std;
 
 class Corn : public Crop {
-    
+    friend ostream& operator<<(ostream&, const Corn&);
 private:
     // corn will be sold in bushels
     // 1 acre = ~174.8 bushels

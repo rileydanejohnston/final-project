@@ -10,7 +10,7 @@
 using namespace std;
 
 class AppleTree : public Crop {
-    
+    friend ostream& operator<<(ostream&, const AppleTree&);
 private:
     double lbsPerUnit;
     const string cropType = "Apple Tree";

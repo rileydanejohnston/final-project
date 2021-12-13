@@ -17,6 +17,23 @@ Crop(identity, cost, revenue, units)
     setLbsPerUnit(lbsUnit);
 }
 
+ostream& operator<<(ostream& output, const AppleTree &right)
+{
+    output << endl;
+    output << "Crop"                << setw(28) << right.getCropType() << endl;
+    output << "ID"                  << setw(30) << right.Crop::getCropId() << endl;
+    output << "------------------------------------" << endl;
+    output << "Apples (lbs)"        << setw(20) << right.Crop::getTotalUnits() << endl;
+    output << "Lbs per sale unit"   << setw(15) << right.getLbsPerUnit() << endl;
+    output << "Total sale units"    << setw(16) << right.calcUnits() << endl;
+    output << "Revenue (sale unit)" << setw(13) << right.Crop::getRevenuePerUnit() << endl;
+    output << "Total revenue"       << setw(19) << right.calcRevenue() << endl;
+    output << "Cost (sale unit)"    << setw(16) << right.Crop::getCostPerUnit() << endl;
+    output << "Total cost"          << setw(22) << right.calcCost()    << endl;
+    output << "Total profit"        << setw(20) << right.calcProfit()  << endl;
+    return output;
+}
+
 AppleTree& AppleTree::setLbsPerUnit(double lbsUnit)
 {
     // validate? 250 is arbitrary

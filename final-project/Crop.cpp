@@ -16,6 +16,15 @@ Crop::Crop(const string &identity,
     setTotalUnits(units);
 }
 
+ostream& operator<<(ostream& output, const Crop &right)
+{
+    output << "ID"<< setw(30) << right.getCropId()<< endl;
+    output << "Revenue (sale unit)" << setw(13) <<  right.getRevenuePerUnit() << endl;
+    output << "Cost (sale unit)" << setw(16) <<  right.getCostPerUnit()    << endl;
+    output << "Units" << setw(27) <<  right.getCostPerUnit();
+    return output;
+}
+
 Crop& Crop::setCropId(const string &identity)
 {
     cropId = identity;

@@ -11,6 +11,7 @@
 #include "Person.h"
 #include "Farmer.h"
 #include "Farm.h"
+#include <fstream>
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -27,6 +28,9 @@ int main() {
     // crop variables
     double lbsUnit, lbsApple, acres;
     string type;
+    // file variables
+    ofstream outputFile;
+    string fileName;
     
     cout << "Name: ";
     getline(cin, name);
@@ -69,13 +73,12 @@ int main() {
         cout << "6) Display crops" << endl;
         cout << "7) Produce - animals" << endl;
         cout << "8) Harvest - crops" << endl;
-        
         cout << "9) Show farmer info" << endl;
-        cout << "7) Display farm" << endl;
-        cout << "8) Save farm to file" << endl;
+        cout << "s) Save farm to file" << endl;
         cout << "q) Quit" << endl << endl;
         cout << "Selection: ";
         cin >> selection;
+        cin.ignore();
         
         if (selection == '1'){
             
@@ -285,6 +288,20 @@ int main() {
         else if (selection == '9')
         {
             farm.displayFarmer();
+        }
+        else if (selection == 's' || selection == 'S')
+        {
+            //Crop crop1("Field-1", 3, 5, 15);
+            //Corn crop2("Field-1", 3, 5, 15);
+            //AppleTree crop3(23, "Field-1", 3, 5, 15);
+            cout << "Save file as: ";
+            getline(cin, fileName);
+            
+            outputFile.open(fileName);
+            //outputFile << crop1 << endl;
+            //outputFile << crop2 << endl;
+            //outputFile << crop3 << endl;
+            outputFile.close();
         }
         else if(selection == 'q' || selection == 'Q'){
             cout << "Thank you for using the program!" << endl;

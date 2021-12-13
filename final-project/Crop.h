@@ -10,7 +10,7 @@
 using namespace std;
 
 class Crop {
-    
+    friend ostream& operator<<(ostream&, const Crop&);
 private:
     string cropId;
     double costPerUnit;

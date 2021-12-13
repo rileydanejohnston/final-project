@@ -15,6 +15,23 @@ Crop(type, cost, revenue, acres)
     
 }
 
+ostream& operator<<(ostream& output, const Corn &right)
+{
+    output << endl;
+    output << "Crop"                       << setw(28) << right.getCropType() << endl;
+    output << "ID"                         << setw(30) << right.Crop::getCropId() << endl;
+    output << "------------------------------------" << endl;
+    output << "Acres"                      << setw(27) << right.Crop::getTotalUnits() << endl;
+    output << "Bushels per acre"           << setw(16) << right.getBushelsPerAcre() << endl;
+    output << "Bushels (sale units)"       << setw(12) << right.calcTotalBushels()   << endl;
+    output << "Revenue (sale unit)"        << setw(13) << right.Crop::getRevenuePerUnit() << endl;
+    output << "Total revenue"              << setw(19) << right.calcRevenue() << endl;
+    output << "Cost (sale unit)"           << setw(16) << right.Crop::getCostPerUnit() << endl;
+    output << "Total cost"                 << setw(22) << right.calcCost()    << endl;
+    output << "Total profit"               << setw(20) << right.calcProfit()  << endl;
+    return output;
+}
+
 double Corn::getBushelsPerAcre() const
 {
     return BUSHELS_PER_ACRE;

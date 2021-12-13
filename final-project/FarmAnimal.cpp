@@ -51,13 +51,13 @@ FarmAnimal& FarmAnimal::setWeight(double lbs)
 
 FarmAnimal& FarmAnimal::setCostPerUnit(double cost){
     // figure out validation
-    costPerUnit = (cost >= 0.0 && cost <= 25.0) ? cost : 0.0;
+    costPerUnit = (cost >= 0.0 && cost <= 2500.0) ? cost : 0.0;
     return *this;
 }
 
 FarmAnimal& FarmAnimal::setRevenuePerUnit(double revenue){
     // figure out validation
-    revenuePerUnit = (revenue >= 0.0 && revenue <= 25.0) ? revenue : 0.0;
+    revenuePerUnit = (revenue >= 0.0 && revenue <= 2500.0) ? revenue : 0.0;
     return *this;
 }
 

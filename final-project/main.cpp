@@ -74,6 +74,7 @@ int main() {
         cout << "7) Produce - animals" << endl;
         cout << "8) Harvest - crops" << endl;
         cout << "9) Show farmer info" << endl;
+        cout << "p) Print farm to console" << endl;
         cout << "s) Save farm to file" << endl;
         cout << "q) Quit" << endl << endl;
         cout << "Selection: ";
@@ -212,7 +213,7 @@ int main() {
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newCorn);
                     
-                    cout << "Added " << acres << " square acres of corn!" << endl;
+                    cout << "Added " << acres << " acres of corn!" << endl;
                 }
                 else if (selection != '1' || selection != '2'){
                     cout << "Invalid selection." << endl;
@@ -289,6 +290,11 @@ int main() {
         {
             farm.displayFarmer();
         }
+        else if (selection == 'p' || selection == 'P')
+        {
+            // cout << farm << endl;
+            farm.displayEntireFarm();
+        }
         else if (selection == 's' || selection == 'S')
         {
             //Crop crop1("Field-1", 3, 5, 15);
@@ -298,7 +304,7 @@ int main() {
             Chicken animal2(12, "Cow1", 5, 5, 5, 10, 8);
             Cow animal3(100, "Cow1", 5, 5, 5, 10, 8);
             Person ppl1("Riley", "4/3/1991", "Smithville");
-            cout << "Save file as: ";
+            cout << "Save file as (ex. 'yourFile.txt'): ";
             getline(cin, fileName);
             
             outputFile.open(fileName);
@@ -308,8 +314,9 @@ int main() {
             //outputFile << animal1 << endl;
             //outputFile << animal2 << endl;
             //outputFile << animal3 << endl;
-            outputFile << ppl1 << endl;
-            outputFile << user << endl;
+            //outputFile << ppl1 << endl;
+            //outputFile << user << endl;
+            outputFile << farm << endl;
             outputFile.close();
         }
         else if(selection == 'q' || selection == 'Q'){

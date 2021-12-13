@@ -34,14 +34,14 @@ Crop& Crop::setCropId(const string &identity)
 // validation? no idea what top limit should be
 Crop& Crop::setCostPerUnit(double cost)
 {
-    costPerUnit = (cost >= 0.0 && cost <= 1000.0) ? cost : 0.0;
+    costPerUnit = (cost >= 0.0 && cost <= 2500.0) ? cost : 0.0;
     return *this;
 }
 
 // validation? no idea what top limit should be
 Crop& Crop::setRevenuePerUnit(double revenue)
 {
-    revenuePerUnit = (revenue >= 0.0 && revenue <= 1000.0) ? revenue : 0.0;
+    revenuePerUnit = (revenue >= 0.0 && revenue <= 2500.0) ? revenue : 0.0;
     return *this;
 }
 

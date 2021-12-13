@@ -20,6 +20,7 @@
 using namespace std;
 
 class Farm {
+    friend ostream& operator<<(ostream&, const Farm&);
 private:
     Farmer headFarmer;
     vector<const FarmAnimal*> animals;
@@ -82,6 +83,8 @@ public:
     void displayAnimals() const;
     void displayCrops() const;
     void displayFarmer() const;
+    void displayFarmFigures() const;
+    void displayEntireFarm() const;
     
     void produce();
     void harvest();

@@ -51,6 +51,35 @@ Farm::~Farm()
     }
 }
 
+ostream& operator<<(ostream& output, const Farm &right)
+{
+    output << right.headFarmer << endl;
+    output << endl;
+    for (int i = 0; i < right.getAnimalSize(); ++i)
+    {
+        output << *right.animals[i] << endl;
+    }
+    
+    for (int i = 0; i < right.getCropSize(); ++i)
+    {
+        output << *right.crops[i] << endl;
+    }
+    
+    output << "Animal revenue" << setw(22) << right.getAnimalRevenue() << endl;
+    output << "Animal cost"    << setw(25) << right.getAnimalCost()    << endl;
+    output << "Animal profit"  << setw(23) << right.calcAnimalProfit() << endl;
+    output << endl;
+    output << "Crop revenue"   << setw(24) << right.getCropRevenue() << endl;
+    output << "Crop cost"      << setw(27) << right.getCropCost()    << endl;
+    output << "Crop profit"    << setw(25) << right.calcCropProfit() << endl;
+    output << "-------------------------------------------" << endl;
+    output << "Total revenue"  << setw(23) << right.getTotalRevenue() << endl;
+    output << "Total cost"     << setw(26) << right.getTotalCost()    << endl;
+    output << "Total profit"   << setw(24) << right.calcTotalProfit();
+    
+    return output;
+}
+
 Farm& Farm::setAnimalRevenue(double rev)
 {
     animalRevenue = (rev >= 0) ? rev : 0.0;
@@ -210,6 +239,29 @@ void Farm::displayCrops() const
 void Farm::displayFarmer() const
 {
     headFarmer.display();
+}
+
+void Farm::displayFarmFigures() const
+{
+    cout << "Animal revenue" << setw(18) << getAnimalRevenue() << endl;
+    cout << "Animal cost"    << setw(21) << getAnimalCost()    << endl;
+    cout << "Animal profit"  << setw(19) << calcAnimalProfit() << endl;
+    cout << endl;
+    cout << "Crop revenue"   << setw(20) << getCropRevenue() << endl;
+    cout << "Crop cost"      << setw(23) << getCropCost()    << endl;
+    cout << "Crop profit"    << setw(21) << calcCropProfit() << endl;
+    cout << "-------------------------------------------" << endl;
+    cout << "Total revenue"  << setw(19) << getTotalRevenue() << endl;
+    cout << "Total cost"     << setw(22) << getTotalCost()    << endl;
+    cout << "Total profit"   << setw(20) << calcTotalProfit() << endl;
+}
+
+void Farm::displayEntireFarm() const
+{
+    displayFarmer();
+    displayAnimals();
+    displayCrops();
+    displayFarmFigures();
 }
 
 void Farm::produce()

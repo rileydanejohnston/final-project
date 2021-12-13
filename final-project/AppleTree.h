@@ -21,6 +21,7 @@ public:
               double  = 0.0,
               double = 0.0,
               double = 0.0  );
+    virtual ~AppleTree() = default;
     
     AppleTree& setLbsPerUnit(double);
     

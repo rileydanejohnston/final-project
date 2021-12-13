@@ -275,18 +275,10 @@ void Farm::produce()
         costSum += animals[i]->calcCost();
     }
     
-    // setAnimalRevenue( revSum + getAnimalRevenue() );
-    // setAnimalCost( costSum + getAnimalCost() );
-    
     setAnimalRevenue( revSum );
     setAnimalCost( costSum );
     
     updateFarmTotals();
-    
-    cout << "Animal revenue: " << getAnimalRevenue() << endl;
-    cout << "Animal cost: " << getAnimalCost() << endl;
-    cout << "Total revenue: " << getTotalRevenue() << endl;
-    cout << "Total cost: " << getTotalCost() << endl;
 }
 
 void Farm::harvest()
@@ -304,11 +296,6 @@ void Farm::harvest()
     setCropCost( costSum );
     
     updateFarmTotals();
-    
-    cout << fixed << setprecision(2) << "Crop revenue: " << getCropRevenue() << endl;
-    cout << "Crop cost: " << getCropCost() << endl;
-    cout << "Total revenue: " << getTotalRevenue() << endl;
-    cout << "Total cost: " << getTotalCost() << endl;
 }
 
 void Farm::updateFarmTotals()

@@ -34,6 +34,12 @@ private:
     double totalRevenue;
     double totalCost;
     
+    int produceCounter;
+    int harvestCounter;
+    
+    void incrementProduceCounter();
+    void incrementHarvestCounter();
+    
     void updateFarmTotals();
 public:
     // initialize with a farmer
@@ -52,6 +58,8 @@ public:
     Farm& setTotalRevenue(double);
     Farm& setTotalCost(double);
     
+    int getProduceCounter() const;
+    int getHarvestCounter() const;
     double getAnimalRevenue() const;
     double getAnimalCost() const;
     double getCropRevenue() const;

@@ -14,6 +14,9 @@ headFarmer(farmer)
     setCropCost(0.0).
     setTotalRevenue(0.0).
     setTotalCost(0.0);
+    
+    harvestCounter = 0;
+    produceCounter = 0;
 }
 
 Farm::Farm(const Farm &farmToCopy):
@@ -53,6 +56,7 @@ Farm::~Farm()
 
 ostream& operator<<(ostream& output, const Farm &right)
 {
+    output << endl;
     output << right.headFarmer << endl;
     output << endl;
     for (int i = 0; i < right.getAnimalSize(); ++i)
@@ -65,10 +69,13 @@ ostream& operator<<(ostream& output, const Farm &right)
         output << *right.crops[i] << endl;
     }
     
+    output << endl;
+    output << "Years"          << setw(27) << right.getProduceCounter() << endl;
     output << "Animal revenue" << setw(22) << right.getAnimalRevenue() << endl;
     output << "Animal cost"    << setw(25) << right.getAnimalCost()    << endl;
     output << "Animal profit"  << setw(23) << right.calcAnimalProfit() << endl;
     output << endl;
+    output << "Harvests"       << setw(24) << right.getHarvestCounter() << endl;
     output << "Crop revenue"   << setw(24) << right.getCropRevenue() << endl;
     output << "Crop cost"      << setw(27) << right.getCropCost()    << endl;
     output << "Crop profit"    << setw(25) << right.calcCropProfit() << endl;
@@ -78,6 +85,22 @@ ostream& operator<<(ostream& output, const Farm &right)
     output << "Total profit"   << setw(24) << right.calcTotalProfit();
     
     return output;
+}
+
+void Farm::incrementProduceCounter()
+{
+    ++produceCounter;
+}
+
+void Farm::incrementHarvestCounter()
+{
+    ++harvestCounter;
+}
+
+void Farm::updateFarmTotals()
+{
+    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
+    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
 }
 
 Farm& Farm::setAnimalRevenue(double rev)
@@ -114,6 +137,16 @@ Farm& Farm::setTotalCost(double cst)
 {
     totalCost = (cst >= 0) ? cst : 0.0;
     return *this;
+}
+
+int Farm::getProduceCounter() const
+{
+    return produceCounter;
+}
+
+int Farm::getHarvestCounter() const
+{
+    return harvestCounter;
 }
 
 double Farm::getAnimalRevenue() const
@@ -243,10 +276,13 @@ void Farm::displayFarmer() const
 
 void Farm::displayFarmFigures() const
 {
+    cout << endl;
+    cout << "Years"          << setw(27) << getProduceCounter() << endl;
     cout << "Animal revenue" << setw(18) << getAnimalRevenue() << endl;
     cout << "Animal cost"    << setw(21) << getAnimalCost()    << endl;
     cout << "Animal profit"  << setw(19) << calcAnimalProfit() << endl;
     cout << endl;
+    cout << "Harvests"       << setw(24) << getHarvestCounter() << endl;
     cout << "Crop revenue"   << setw(20) << getCropRevenue() << endl;
     cout << "Crop cost"      << setw(23) << getCropCost()    << endl;
     cout << "Crop profit"    << setw(21) << calcCropProfit() << endl;
@@ -278,6 +314,7 @@ void Farm::produce()
     setAnimalRevenue( revSum );
     setAnimalCost( costSum );
     
+    incrementProduceCounter();
     updateFarmTotals();
 }
 
@@ -295,11 +332,6 @@ void Farm::harvest()
     setCropRevenue( revSum );
     setCropCost( costSum );
     
+    incrementHarvestCounter();
     updateFarmTotals();
-}
-
-void Farm::updateFarmTotals()
-{
-    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
-    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
 }

@@ -27,7 +27,6 @@ string Corn::getCropType() const
 
 int Corn::calcTotalBushels() const
 {
-    cout << "Total bushels: " << floor ( Crop::getTotalUnits() * getBushelsPerAcre() ) << endl;
     return floor ( Crop::getTotalUnits() * getBushelsPerAcre() );
 }
 
@@ -48,12 +47,16 @@ double Corn::calcProfit() const
 
 void Corn::display() const
 {
-    cout << getCropType() << endl;
-    Crop::display();
     cout << endl;
-    cout << "Square  acres: " << setw(11) << Crop::getTotalUnits()   << endl;
-    cout << "Total bushels: " << setw(11) << calcTotalBushels()   << endl;
-    cout << "Revenue total: " << setw(11) << calcRevenue() << endl;
-    cout << "Cost    total: " << setw(11) << calcCost()    << endl;
-    cout << "Profit  total: " << setw(11) << calcProfit()  << endl;
+    cout << "Crop"                       << setw(28) << getCropType() << endl;
+    cout << "------------------------------------" << endl;
+    cout << "ID"                         << setw(30) << Crop::getCropId() << endl;
+    cout << "Acres"                      << setw(27) << Crop::getTotalUnits() << endl;
+    cout << "Bushels per acre"           << setw(16) << getBushelsPerAcre() << endl;
+    cout << "Bushels (sale units)"       << setw(12) << calcTotalBushels()   << endl;
+    cout << "Revenue (sale unit)"        << setw(13) << Crop::getRevenuePerUnit() << endl;
+    cout << "Total revenue"              << setw(19) << calcRevenue() << endl;
+    cout << "Cost (sale unit)"           << setw(16) << Crop::getCostPerUnit() << endl;
+    cout << "Total cost"                 << setw(22) << calcCost()    << endl;
+    cout << "Total profit"               << setw(20) << calcProfit()  << endl;
 }

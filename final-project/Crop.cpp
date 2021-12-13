@@ -38,7 +38,7 @@ Crop& Crop::setRevenuePerUnit(double revenue)
 
 Crop& Crop::setTotalUnits(double units)
 {
-    totalUnits = (units >= 0 && units <= 5000.00) ? units : 0.0;
+    totalUnits = (units >= 0 && units <= 1000.00) ? units : 0.0;
     return *this;
 }
 
@@ -79,7 +79,8 @@ double Crop::calcProfit() const
 
 void Crop::display() const
 {
-    cout << "Crop Id: "      << setw(15) <<  getCropId()       << endl;
-    cout << "Revenue (unit): " << setw(10) <<  getRevenuePerUnit() << endl;
-    cout << "Cost    (unit): " << setw(10) <<  getCostPerUnit()    << endl;
+    cout << "ID"<< setw(30) << getCropId()<< endl;
+    cout << "Revenue (sale unit)" << setw(13) <<  getRevenuePerUnit() << endl;
+    cout << "Cost (sale unit)" << setw(16) <<  getCostPerUnit()    << endl;
+    cout << "Units" << setw(27) <<  getCostPerUnit()    << endl;
 }

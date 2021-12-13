@@ -16,11 +16,15 @@
 using namespace std;
 
 int main() {
-    Cow doggie(100, "Dog-1", 15, 15, 3, 5, 18);
-    Chicken chick1(12, "Chick-1", 15, 15, 3, 5, 18);
+    // Cow doggie(100, "Dog-1", 15, 15, 3, 5, 18);
+    // Chicken chick1(12, "Chick-1", 15, 15, 3, 5, 18);
+    // Corn crop1("Field-1", 3, 5, 150);
     
-    doggie.display();
-    chick1.display();
+    // doggie.display();
+    // crop1.display();
+    
+    //
+    //chick1.display();
     
     // farmer variables
     string name, bday, town, focus;
@@ -200,7 +204,7 @@ int main() {
                     cout << "Crop ID (ex field1): ";
                     getline(cin, identity);
                     
-                    cout << "Square acres: ";
+                    cout << "Total acres: ";
                     cin >> acres;
                     
                     cout << "Cost per sale unit?: ";

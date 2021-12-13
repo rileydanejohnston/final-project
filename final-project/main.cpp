@@ -16,18 +16,6 @@
 using namespace std;
 
 int main() {
-    // Cow doggie(100, "Dog-1", 15, 15, 3, 5, 18);
-    // Chicken chick1(12, "Chick-1", 15, 15, 3, 5, 18);
-    // Corn crop1("Field-1", 3, 5, 150);
-    // AppleTree tree1(50, "Field-1", 3, 5, 324);
-    
-    // doggie.display();
-    crop1.display();
-    tree1.display();
-    
-    //
-    //chick1.display();
-    
     // farmer variables
     string name, bday, town, focus;
     double experience = 0.0;

@@ -26,9 +26,9 @@ public:
     string getCropType() const;
     int calcTotalBushels() const;
     
-    double calcCost() const;
-    double calcRevenue() const;
-    double calcProfit() const;
+    virtual double calcCost() const;
+    virtual double calcRevenue() const;
+    virtual double calcProfit() const;
     
     // virtual void produce(int = 1);
     virtual void display() const;

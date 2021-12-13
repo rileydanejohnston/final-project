@@ -294,6 +294,9 @@ int main() {
             //Crop crop1("Field-1", 3, 5, 15);
             //Corn crop2("Field-1", 3, 5, 15);
             //AppleTree crop3(23, "Field-1", 3, 5, 15);
+            FarmAnimal animal1("Cow1", 5, 5, 5, 10, 8);
+            Chicken animal2(12, "Cow1", 5, 5, 5, 10, 8);
+            Cow animal3(100, "Cow1", 5, 5, 5, 10, 8);
             cout << "Save file as: ";
             getline(cin, fileName);
             
@@ -301,6 +304,9 @@ int main() {
             //outputFile << crop1 << endl;
             //outputFile << crop2 << endl;
             //outputFile << crop3 << endl;
+            outputFile << animal1 << endl;
+            outputFile << animal2 << endl;
+            outputFile << animal3 << endl;
             outputFile.close();
         }
         else if(selection == 'q' || selection == 'Q'){

@@ -11,7 +11,7 @@
 using namespace std;
 
 class Cow : public FarmAnimal {
-    
+    friend ostream& operator<<(ostream&, const Cow&);
 private:
     // apparently milk is sold by the lb
     // 8.6 lbs = 1 gallon

@@ -19,6 +19,28 @@ Cow::Cow(double lbsSaleUnit,
     setLbsPerSaleUnit(lbsSaleUnit);
 }
 
+ostream& operator<<(ostream& output, const Cow &right)
+{
+    output << endl;
+    output << "Animal"               << setw(26) << right.getAnimal() << endl;
+    output << "ID"                   << setw(30) << right.FarmAnimal::getId() << endl;
+    output << "------------------------------------" << endl;
+    output << "Age"                  << setw(29) << right.FarmAnimal::getAge() << endl;
+    output << "Weight (lbs)"         << setw(20) << right.FarmAnimal::getWeight() << endl;
+    output << "Units per day"        << setw(19) << right.FarmAnimal::getAveragePerDay() << endl;
+    output << "Gallons (365 days)"   << setw(14) << right.getYearProduction() << endl;
+    output << "Lbs per gallon"       << setw(18) << right.getLbsPerGallon() << endl;
+    output << "Total Lbs (365 days)" << setw(12) << right.calcTotalLbs() << endl;
+    output << "Lbs per sale unit"    << setw(15) << right.getLbsPerSaleUnit() << endl;
+    output << "Total sale units"     << setw(16) << right.calcTotalSaleUnits() << endl;
+    output << "Revenue (sale unit)"  << setw(13) << right.FarmAnimal::getRevenuePerUnit() << endl;
+    output << "Total revenue"        << setw(19) << right.calcRevenue() << endl;
+    output << "Cost (sale unit)"     << setw(16) << right.FarmAnimal::getCostPerUnit() << endl;
+    output << "Total cost"           << setw(22) << right.calcCost() << endl;
+    output << "Total profit"         << setw(20) << right.calcProfit();
+    return output;
+}
+
 Cow& Cow::setLbsPerSaleUnit(double lbsSaleUnit)
 {
     lbsPerSaleUnit = (lbsSaleUnit >= 0.0 && lbsSaleUnit <= 250.0) ? lbsSaleUnit : 1.0;

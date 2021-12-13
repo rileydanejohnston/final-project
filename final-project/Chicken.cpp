@@ -19,6 +19,26 @@ Chicken::Chicken(int eggsUnit,
     setEggsPerUnit(eggsUnit);
 }
 
+ostream& operator<<(ostream& output, const Chicken &right)
+{
+    output << endl;
+    output << "Animal"               << setw(26) << right.getAnimal() << endl;
+    output << "ID"                   << setw(30) << right.FarmAnimal::getId() << endl;
+    output << "------------------------------------" << endl;
+    output << "Age"                  << setw(29) << right.FarmAnimal::getAge() << endl;
+    output << "Weight (lbs)"         << setw(20) << right.FarmAnimal::getWeight() << endl;
+    output << "Units per day"        << setw(19) << right.FarmAnimal::getAveragePerDay() << endl;
+    output << "Eggs (365 days)"   << setw(17) << right.getYearProduction() << endl;
+    output << "Eggs per sale unit"       << setw(14) << right.getEggsPerUnit() << endl;
+    output << "Total sale units"     << setw(16) << right.calcUnits() << endl;
+    output << "Revenue (sale unit)"  << setw(13) << right.FarmAnimal::getRevenuePerUnit() << endl;
+    output << "Total revenue"        << setw(19) << right.calcRevenue() << endl;
+    output << "Cost (sale unit)"     << setw(16) << right.FarmAnimal::getCostPerUnit() << endl;
+    output << "Total cost"           << setw(22) << right.calcCost() << endl;
+    output << "Total profit"         << setw(20) << right.calcProfit();
+    return output;
+}
+
 Chicken& Chicken::setEggsPerUnit(int eggsUnit){
     eggsPerUnit = (eggsUnit >= 0 && eggsUnit <= 36) ? eggsUnit : 0;
     return *this;

@@ -20,6 +20,17 @@ FarmAnimal::FarmAnimal(const string &identity,
     setAveragePerDay(numPerDay);
 }
 
+ostream& operator<<(ostream& output, const FarmAnimal &right)
+{
+    output << "ID: "                  << setw(30) << right.getId() << endl;
+    output << "Age: "                 << setw(29) << right.getAge() << endl;
+    output << "Weight (lbs): "        << setw(20) << right.getWeight() << endl;
+    output << "Revenue (sale unit): " << setw(13) << right.getRevenuePerUnit() << endl;
+    output << "Cost (sale unit): "    << setw(16) << right.getCostPerUnit() << endl;
+    output << "Units per day: "       << setw(19) << right.getAveragePerDay();
+    return output;
+}
+
 FarmAnimal& FarmAnimal::setId(const string &identity)
 {
     id = identity;

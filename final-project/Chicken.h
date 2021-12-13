@@ -11,6 +11,7 @@
 using namespace std;
 
 class Chicken : public FarmAnimal {
+    friend ostream& operator<<(ostream&, const Chicken&);
 private:
     int eggsPerDay;
     int eggsPerUnit;

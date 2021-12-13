@@ -30,7 +30,7 @@ ostream& operator<<(ostream& output, const AppleTree &right)
     output << "Total revenue"       << setw(19) << right.calcRevenue() << endl;
     output << "Cost (sale unit)"    << setw(16) << right.Crop::getCostPerUnit() << endl;
     output << "Total cost"          << setw(22) << right.calcCost()    << endl;
-    output << "Total profit"        << setw(20) << right.calcProfit()  << endl;
+    output << "Total profit"        << setw(20) << right.calcProfit();
     return output;
 }
 

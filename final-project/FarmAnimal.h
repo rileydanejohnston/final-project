@@ -10,7 +10,7 @@
 using namespace std;
 
 class FarmAnimal {
-    
+    friend ostream& operator<<(ostream&, const FarmAnimal&);
 private:
     string id;
     double age;

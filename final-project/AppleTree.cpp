@@ -38,7 +38,6 @@ int AppleTree::calcUnits() const
 {
     // probably could truncate and get the right answer
     // better practice is floor
-    cout << "total apple units: " << floor(Crop::getTotalUnits() / getLbsPerUnit()) << endl;
     return floor(Crop::getTotalUnits() / getLbsPerUnit());
 }
 
@@ -59,11 +58,16 @@ double AppleTree::calcProfit() const
 
 void AppleTree::display() const
 {
-    cout << getCropType() << endl;
-    Crop::display();
-    cout << "Apples    (lbs): " << setw(10) <<  Crop::getTotalUnits()     << endl;
-    cout << "Apples  (units): " << setw(10) <<  calcUnits()    << endl;
-    cout << "Revenue (total): " << setw(10) <<  calcRevenue() << endl;
-    cout << "Cost    (total): " << setw(10) <<  calcCost()    << endl;
-    cout << "Profit  (total): " << setw(10) <<  calcProfit()  << endl;
+    cout << endl;
+    cout << "Crop"                << setw(28) << getCropType() << endl;
+    cout << "------------------------------------" << endl;
+    cout << "ID"                  << setw(30) << Crop::getCropId() << endl;
+    cout << "Apples (lbs)"        << setw(20) << Crop::getTotalUnits() << endl;
+    cout << "Lbs per sale unit"   << setw(15) << getLbsPerUnit() << endl;
+    cout << "Total sale units"    << setw(16) << calcUnits() << endl;
+    cout << "Revenue (sale unit)" << setw(13) << Crop::getRevenuePerUnit() << endl;
+    cout << "Total revenue"       << setw(19) << calcRevenue() << endl;
+    cout << "Cost (sale unit)"    << setw(16) << Crop::getCostPerUnit() << endl;
+    cout << "Total cost"          << setw(22) << calcCost()    << endl;
+    cout << "Total profit"        << setw(20) << calcProfit()  << endl;
 }

@@ -14,6 +14,14 @@ Person::Person(const string &nm,
     setHomeTown(town);
 }
 
+ostream& operator<<(ostream& output, const Person &right)
+{
+    output << "Name: "     << setw(30) << right.getName() << endl;
+    output << "Birthday: " << setw(26) << right.getBirthday() << endl;
+    output << "Hometown: " << setw(26)<< right.getHomeTown();
+    return output;
+}
+
 Person& Person::setName(const string &nm)
 {
     name = nm;

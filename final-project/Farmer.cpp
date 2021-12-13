@@ -21,6 +21,17 @@ MAX_RATING(MAX)
     setYearsExperience(exp);
 }
 
+ostream& operator<<(ostream& output, const Farmer &right)
+{
+    output << "Name: "     << setw(30) << right.Person::getName() << endl;
+    output << "Birthday: " << setw(26) << right.Person::getBirthday() << endl;
+    output << "Hometown: " << setw(26)<< right.Person::getHomeTown() << endl;
+    output << "Focus: " << setw(29) << right.getAreaOfFocus() << endl;
+    output << "Rating: " << setw(24) << right.getSkillRating() << " / " << right.getMaxRating() << endl;
+    output << "Experience (years): " << setw(16) << right.getYearsExperience();
+    return output;
+}
+
 Farmer& Farmer::setAreaOfFocus(const string &focus)
 {
     areaOfFocus = focus;

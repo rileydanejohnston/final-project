@@ -10,6 +10,7 @@
 using namespace std;
 
 class Person {
+    friend ostream& operator<<(ostream&, const Person&);
 private:
     string name;
     string birthday;

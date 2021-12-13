@@ -11,7 +11,7 @@
 using namespace std;
 
 class Farmer : public Person {
-    
+    friend ostream& operator<<(ostream&, const Farmer&);
 private:
     string areaOfFocus;      // animals vs crops
     int skillRating;

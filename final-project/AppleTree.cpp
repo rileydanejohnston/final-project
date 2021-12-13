@@ -60,8 +60,8 @@ void AppleTree::display() const
 {
     cout << endl;
     cout << "Crop"                << setw(28) << getCropType() << endl;
-    cout << "------------------------------------" << endl;
     cout << "ID"                  << setw(30) << Crop::getCropId() << endl;
+    cout << "------------------------------------" << endl;
     cout << "Apples (lbs)"        << setw(20) << Crop::getTotalUnits() << endl;
     cout << "Lbs per sale unit"   << setw(15) << getLbsPerUnit() << endl;
     cout << "Total sale units"    << setw(16) << calcUnits() << endl;

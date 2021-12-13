@@ -49,8 +49,8 @@ void Corn::display() const
 {
     cout << endl;
     cout << "Crop"                       << setw(28) << getCropType() << endl;
-    cout << "------------------------------------" << endl;
     cout << "ID"                         << setw(30) << Crop::getCropId() << endl;
+    cout << "------------------------------------" << endl;
     cout << "Acres"                      << setw(27) << Crop::getTotalUnits() << endl;
     cout << "Bushels per acre"           << setw(16) << getBushelsPerAcre() << endl;
     cout << "Bushels (sale units)"       << setw(12) << calcTotalBushels()   << endl;

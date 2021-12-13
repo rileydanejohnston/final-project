@@ -73,8 +73,8 @@ double Cow::calcProfit() const
 void Cow::display() const {
     cout << endl;
     cout << "Animal"               << setw(26) << getAnimal() << endl;
-    cout << "------------------------------------" << endl;
     cout << "ID"                   << setw(30) << FarmAnimal::getId() << endl;
+    cout << "------------------------------------" << endl;
     cout << "Age"                  << setw(29) << FarmAnimal::getAge() << endl;
     cout << "Weight (lbs)"         << setw(20) << FarmAnimal::getWeight() << endl;
     cout << "Units per day"        << setw(19) << FarmAnimal::getAveragePerDay() << endl;

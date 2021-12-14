@@ -6,11 +6,12 @@
 #include <iomanip>
 #include <math.h>
 
-Corn::Corn(const string &type,
+Corn::Corn(double bushelsEveryAcre,
+           const string &type,
            double cost,
            double revenue,
            double acres     ):
-Crop(type, cost, revenue, acres)
+Crop(type, cost, revenue, acres), BUSHELS_PER_ACRE(bushelsEveryAcre)
 {
     
 }

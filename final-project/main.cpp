@@ -26,7 +26,7 @@ int main() {
     double avgGal= 0.0, cowLbsSaleUnit = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
     int eggsPerDay = 0, eggsPerUnit = 0, removeItem = 0;
     // crop variables
-    double lbsUnit, lbsApple, acres;
+    double lbsUnit, lbsApple, acres, bushelsPerAcre;
     string type;
     // file variables
     ofstream outputFile;
@@ -48,7 +48,7 @@ int main() {
     cin >> experience;
     
     // explain this better?
-    cout << "Max rating: ";
+    cout << "Max rating (for rating your skills): ";
     cin >> maxRating;
     
     cout << "Your rating (from 0 to " << maxRating << "): ";
@@ -201,14 +201,17 @@ int main() {
                     cout << "Total acres: ";
                     cin >> acres;
                     
-                    cout << "Cost per sale unit?: ";
+                    cout << "Bushels per acre (174.8 is average): ";
+                    cin >> bushelsPerAcre;
+                    
+                    cout << "Cost per bushel: ";
                     cin >> cost;
                     
-                    cout << "Revenue per sale unit?: ";
+                    cout << "Revenue per bushel: ";
                     cin >> revenue;
                     cin.ignore();
                     
-                    Corn *newCorn = new Corn(identity, cost, revenue, acres);
+                    Corn *newCorn = new Corn(bushelsPerAcre, identity, cost, revenue, acres);
                     
                     // passing what newChicken is pointing at..
                     farm.addCrop(*newCorn);

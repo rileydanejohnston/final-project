@@ -14,10 +14,11 @@ class Corn : public Crop {
 private:
     // corn will be sold in bushels
     // 1 acre = ~174.8 bushels
-    const double BUSHELS_PER_ACRE = 174.8;
+    const double BUSHELS_PER_ACRE;
     const string CROP_TYPE = "Corn";
 public:
-    Corn(const string& = "Field 1",
+    Corn(double = 174.8,
+         const string& = "Field 1",
          double = 0.0,
          double = 0.0,
          double = 0.0       );

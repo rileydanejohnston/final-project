@@ -22,6 +22,7 @@ FarmAnimal::FarmAnimal(const string &identity,
 
 ostream& operator<<(ostream& output, const FarmAnimal &right)
 {
+    output << fixed << setprecision(2) << endl;
     output << "ID: "                  << setw(30) << right.getId() << endl;
     output << "Age: "                 << setw(29) << right.getAge() << endl;
     output << "Weight (lbs): "        << setw(20) << right.getWeight() << endl;
@@ -118,6 +119,7 @@ double FarmAnimal::calcProfit() const
 }
 
 void FarmAnimal::display() const {
+    cout << fixed << setprecision(2) << endl;
     cout << "ID: "                  << setw(30) << getId() << endl;
     cout << "Age: "                 << setw(29) << getAge() << endl;
     cout << "Weight (lbs): "        << setw(20) << getWeight() << endl;

@@ -18,7 +18,7 @@ Crop(type, cost, revenue, acres), BUSHELS_PER_ACRE(bushelsEveryAcre)
 
 ostream& operator<<(ostream& output, const Corn &right)
 {
-    output << endl;
+    output << fixed << setprecision(2) << endl;
     output << "Crop"                       << setw(28) << right.getCropType() << endl;
     output << "ID"                         << setw(30) << right.Crop::getCropId() << endl;
     output << "------------------------------------" << endl;
@@ -65,6 +65,7 @@ double Corn::calcProfit() const
 
 void Corn::display() const
 {
+    cout << fixed << setprecision(2) << endl;
     cout << endl;
     cout << "Crop"                       << setw(28) << getCropType() << endl;
     cout << "ID"                         << setw(30) << Crop::getCropId() << endl;

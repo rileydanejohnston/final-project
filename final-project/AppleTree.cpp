@@ -19,7 +19,7 @@ Crop(identity, cost, revenue, units)
 
 ostream& operator<<(ostream& output, const AppleTree &right)
 {
-    output << endl;
+    output << fixed << setprecision(2) << endl;
     output << "Crop"                << setw(28) << right.getCropType() << endl;
     output << "ID"                  << setw(30) << right.Crop::getCropId() << endl;
     output << "------------------------------------" << endl;
@@ -75,7 +75,7 @@ double AppleTree::calcProfit() const
 
 void AppleTree::display() const
 {
-    cout << endl;
+    cout << fixed << setprecision(2) << endl;
     cout << "Crop"                << setw(28) << getCropType() << endl;
     cout << "ID"                  << setw(30) << Crop::getCropId() << endl;
     cout << "------------------------------------" << endl;

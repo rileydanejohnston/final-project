@@ -8,20 +8,21 @@
 #include <math.h>
 
 Cow::Cow(double lbsSaleUnit,
+         double lbsPerGallon,
          const string &identity,
          double years,
          double lbs,
          double cost,
          double revenue,
          double numPerDay       )
-:FarmAnimal(identity, years, lbs, cost, revenue, numPerDay)
+:FarmAnimal(identity, years, lbs, cost, revenue, numPerDay), LBS_PER_GALLON(lbsPerGallon)
 {
     setLbsPerSaleUnit(lbsSaleUnit);
 }
 
 ostream& operator<<(ostream& output, const Cow &right)
 {
-    output << endl;
+    output << fixed << setprecision(2) << endl;
     output << "Animal"               << setw(26) << right.getAnimal() << endl;
     output << "ID"                   << setw(30) << right.FarmAnimal::getId() << endl;
     output << "------------------------------------" << endl;
@@ -93,7 +94,7 @@ double Cow::calcProfit() const
 }
 
 void Cow::display() const {
-    cout << endl;
+    cout << fixed << setprecision(2) << endl;
     cout << "Animal"               << setw(26) << getAnimal() << endl;
     cout << "ID"                   << setw(30) << FarmAnimal::getId() << endl;
     cout << "------------------------------------" << endl;

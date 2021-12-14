@@ -16,10 +16,11 @@ private:
     // apparently milk is sold by the lb
     // 8.6 lbs = 1 gallon
     double lbsPerSaleUnit;
-    const double LBS_PER_GALLON = 8.6;
+    const double LBS_PER_GALLON;
     const string ANIMAL = "Cow";
 public:
     Cow(double = 0.0,
+        double = 0.0,
         
         const string& = "ID-1",
         double = 0.0,

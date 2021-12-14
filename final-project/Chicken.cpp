@@ -21,7 +21,7 @@ Chicken::Chicken(int eggsUnit,
 
 ostream& operator<<(ostream& output, const Chicken &right)
 {
-    output << endl;
+    output << fixed << setprecision(2) << endl;
     output << "Animal"               << setw(26) << right.getAnimal() << endl;
     output << "ID"                   << setw(30) << right.FarmAnimal::getId() << endl;
     output << "------------------------------------" << endl;
@@ -80,7 +80,7 @@ double Chicken::calcProfit() const
 }
 
 void Chicken::display() const {
-    cout << endl;
+    cout << fixed << setprecision(2) << endl;
     cout << "Animal"               << setw(26) << getAnimal() << endl;
     cout << "ID"                   << setw(30) << FarmAnimal::getId() << endl;
     cout << "------------------------------------" << endl;

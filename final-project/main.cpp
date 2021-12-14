@@ -23,7 +23,7 @@ int main() {
     int rating = 0, maxRating = 0;
     // animal variables
     string identity;
-    double avgGal= 0.0, cowLbsSaleUnit = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
+    double avgGal= 0.0, lbsPerGallon = 0.0, cowLbsSaleUnit = 0.0, years = 0.0, lbs = 0.0, cost = 0.0, revenue = 0.0;
     int eggsPerDay = 0, eggsPerUnit = 0, removeItem = 0;
     // crop variables
     double lbsUnit, lbsApple, acres, bushelsPerAcre;
@@ -136,6 +136,9 @@ int main() {
                     cout << "Gallons of milk (per day): ";
                     cin >> avgGal;
                     
+                    cout << "Pounds per gallon (average is 8.6 lbs per gallon): ";
+                    cin >> lbsPerGallon;
+                    
                     cout << "Pounds per sale unit (ex. milk sold in 100 lb units): ";
                     cin >> cowLbsSaleUnit;
                     
@@ -146,7 +149,7 @@ int main() {
                     cin >> revenue;
                     cin.ignore();
                     
-                    Cow *newCow = new Cow(cowLbsSaleUnit, identity, years, lbs, cost, revenue, avgGal);
+                    Cow *newCow = new Cow(cowLbsSaleUnit, lbsPerGallon, identity, years, lbs, cost, revenue, avgGal);
                     
                     // passing what newCow is pointing at..
                     farm.addAnimal(*newCow);
@@ -282,7 +285,6 @@ int main() {
         }
         else if (selection == '7')
         {
-            cout << "Projection for 365 days:" << endl;
             farm.produce();
         }
         else if (selection == '8')
@@ -295,30 +297,14 @@ int main() {
         }
         else if (selection == 'p' || selection == 'P')
         {
-            // cout << farm << endl;
             farm.displayEntireFarm();
         }
         else if (selection == 's' || selection == 'S')
         {
-            //Crop crop1("Field-1", 3, 5, 15);
-            //Corn crop2("Field-1", 3, 5, 15);
-            //AppleTree crop3(23, "Field-1", 3, 5, 15);
-            FarmAnimal animal1("Cow1", 5, 5, 5, 10, 8);
-            Chicken animal2(12, "Cow1", 5, 5, 5, 10, 8);
-            Cow animal3(100, "Cow1", 5, 5, 5, 10, 8);
-            Person ppl1("Riley", "4/3/1991", "Smithville");
             cout << "Save file as (ex. 'yourFile.txt'): ";
             getline(cin, fileName);
             
             outputFile.open(fileName);
-            //outputFile << crop1 << endl;
-            //outputFile << crop2 << endl;
-            //outputFile << crop3 << endl;
-            //outputFile << animal1 << endl;
-            //outputFile << animal2 << endl;
-            //outputFile << animal3 << endl;
-            //outputFile << ppl1 << endl;
-            //outputFile << user << endl;
             outputFile << farm << endl;
             outputFile.close();
         }

@@ -18,6 +18,7 @@ Crop::Crop(const string &identity,
 
 ostream& operator<<(ostream& output, const Crop &right)
 {
+    output << fixed << setprecision(2) << endl;
     output << "ID"<< setw(30) << right.getCropId()<< endl;
     output << "Revenue (sale unit)" << setw(13) <<  right.getRevenuePerUnit() << endl;
     output << "Cost (sale unit)" << setw(16) <<  right.getCostPerUnit()    << endl;
@@ -88,6 +89,7 @@ double Crop::calcProfit() const
 
 void Crop::display() const
 {
+    cout << fixed << setprecision(2) << endl;
     cout << "ID"<< setw(30) << getCropId()<< endl;
     cout << "Revenue (sale unit)" << setw(13) <<  getRevenuePerUnit() << endl;
     cout << "Cost (sale unit)" << setw(16) <<  getCostPerUnit()    << endl;

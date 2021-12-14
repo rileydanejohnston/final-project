@@ -56,7 +56,7 @@ Farm::~Farm()
 
 ostream& operator<<(ostream& output, const Farm &right)
 {
-    output << endl;
+    output << fixed << setprecision(2) << endl;
     output << right.headFarmer << endl;
     output << endl;
     for (int i = 0; i < right.getAnimalSize(); ++i)

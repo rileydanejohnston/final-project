@@ -28,7 +28,6 @@ public:
         double = 0.0,
         double = 0.0,
         double = 0.0        );
-    virtual ~Cow() = default;       // marking virtual for clarity
     
     Cow& setLbsPerSaleUnit(double);
     

@@ -21,7 +21,6 @@ public:
          double = 0.0,
          double = 0.0,
          double = 0.0       );
-    virtual ~Crop() = default;
     
     Crop& setCropId(const string&);
     Crop& setCostPerUnit(double);

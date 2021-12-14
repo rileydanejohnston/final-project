@@ -48,7 +48,7 @@ int main() {
     cin >> experience;
     
     // explain this better?
-    cout << "Max rating (for rating your skills): ";
+    cout << "Max rating of skills (ex. 1 - 5, 5 being most proficient): ";
     cin >> maxRating;
     
     cout << "Your rating (from 0 to " << maxRating << "): ";

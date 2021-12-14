@@ -24,7 +24,6 @@ public:
             double = 0.0,
             double = 0.0,
             double = 0.0        );
-    virtual ~Chicken() = default;    // marking virtual for clarity
     
     Chicken& setEggsPerUnit(int);       // 12 eggs per dozen. You wouldn't sell a single egg
     

@@ -22,7 +22,6 @@ public:
          double = 0.0,
          double = 0.0,
          double = 0.0       );
-    virtual ~Corn() = default;
     
     double getBushelsPerAcre() const;
     string getCropType() const;

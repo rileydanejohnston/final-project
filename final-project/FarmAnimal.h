@@ -26,7 +26,6 @@ public:
                double = 0.0,
                double = 0.0,
                double = 0.0         );
-    virtual ~FarmAnimal() = default;
     
     FarmAnimal& setId(const string&);
     FarmAnimal& setAge(double);

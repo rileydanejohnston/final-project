@@ -70,6 +70,7 @@ ostream& operator<<(ostream& output, const Farm &right)
     }
     
     output << endl;
+    output << "-------------------------------------------" << endl;
     output << "Years"          << setw(27) << right.getProduceCounter() << endl;
     output << "Animal revenue" << setw(22) << right.getAnimalRevenue() << endl;
     output << "Animal cost"    << setw(25) << right.getAnimalCost()    << endl;
@@ -95,12 +96,6 @@ void Farm::incrementProduceCounter()
 void Farm::incrementHarvestCounter()
 {
     ++harvestCounter;
-}
-
-void Farm::updateFarmTotals()
-{
-    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() + getCropRevenue() );
-    setTotalCost( getTotalCost() + getAnimalCost() + getCropCost() );
 }
 
 Farm& Farm::setAnimalRevenue(double rev)
@@ -277,6 +272,7 @@ void Farm::displayFarmer() const
 void Farm::displayFarmFigures() const
 {
     cout << endl;
+    cout << "-------------------------------------------" << endl;
     cout << "Years"          << setw(27) << getProduceCounter() << endl;
     cout << "Animal revenue" << setw(18) << getAnimalRevenue() << endl;
     cout << "Animal cost"    << setw(21) << getAnimalCost()    << endl;
@@ -315,7 +311,9 @@ void Farm::produce()
     setAnimalCost( costSum );
     
     incrementProduceCounter();
-    updateFarmTotals();
+    
+    setTotalRevenue( getTotalRevenue() + getAnimalRevenue() );
+    setTotalCost( getTotalCost() + getAnimalCost() );
 }
 
 void Farm::harvest()
@@ -333,5 +331,7 @@ void Farm::harvest()
     setCropCost( costSum );
     
     incrementHarvestCounter();
-    updateFarmTotals();
+    
+    setTotalRevenue( getTotalRevenue() + getCropRevenue() );
+    setTotalCost( getTotalCost() + getCropCost() );
 }

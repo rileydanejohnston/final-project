@@ -66,7 +66,6 @@ double Corn::calcProfit() const
 void Corn::display() const
 {
     cout << fixed << setprecision(2) << endl;
-    cout << endl;
     cout << "Crop"                       << setw(28) << getCropType() << endl;
     cout << "ID"                         << setw(30) << Crop::getCropId() << endl;
     cout << "------------------------------------" << endl;

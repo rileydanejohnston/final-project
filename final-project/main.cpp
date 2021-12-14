@@ -277,19 +277,49 @@ int main() {
         }
         else if (selection == '5')
         {
-            farm.displayAnimals();
+            if (farm.getAnimalSize() == 0)
+            {
+                cout << "The farm doesn't have any animals. Please add some animals to the farm and try again." << endl;
+            }
+            else
+            {
+                farm.displayAnimals();
+            }
         }
         else if (selection == '6')
         {
-            farm.displayCrops();
+            if (farm.getCropSize() == 0)
+            {
+                cout << "The farm doesn't have any crops. Please add some crops to the farm and try again." << endl;
+            }
+            else
+            {
+                farm.displayCrops();
+            }
         }
         else if (selection == '7')
         {
-            farm.produce();
+            if (farm.getAnimalSize() == 0)
+            {
+                cout << "The farm doesn't have any animals. Please add some animals to the farm and try again." << endl;
+            }
+            else
+            {
+                farm.produce();
+                cout << "Success! 365 days worth of production added to the books!" << endl;
+            }
         }
         else if (selection == '8')
         {
-            farm.harvest();
+            if (farm.getCropSize() == 0)
+            {
+                cout << "The farm doesn't have any crops. Please add some crops to the farm and try again." << endl;
+            }
+            else
+            {
+                farm.harvest();
+                cout << "Success! The crop harvest has been added to the books!" << endl;
+            }
         }
         else if (selection == '9')
         {

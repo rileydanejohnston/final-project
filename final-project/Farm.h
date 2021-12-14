@@ -39,8 +39,6 @@ private:
     
     void incrementProduceCounter();
     void incrementHarvestCounter();
-    
-    void updateFarmTotals();
 public:
     // initialize with a farmer
     Farm(const Farmer& = Farmer());
@@ -77,13 +75,6 @@ public:
     
     unsigned long getAnimalSize() const;
     unsigned long getCropSize() const;
-    // add crops
-    // add people
-    // add animals
-    
-    // remove crops
-    // remove ppl
-    // remove animals
     
     void deleteAnimalList() const;
     void deleteCropList() const;
